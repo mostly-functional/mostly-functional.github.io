@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Web App Development - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Web App Development</h1>
+<div class="content ">
+  <p>A <a href="https://en.wikipedia.org/wiki/Web_application">web application</a> is any client-server program where the intended client is a web browser.</p>
+<p>In app development, a distinction is typically made between <a href="https://en.wikipedia.org/wiki/Front_and_back_ends"><em>frontend</em></a> (i.e. client or <a href="https://en.wikipedia.org/wiki/Web_browser">browser</a>) and <a href="(https://en.wikipedia.org/wiki/Front_and_back_ends)"><em>backend</em></a> (i.e. <a href="https://en.wikipedia.org/wiki/Client%E2%80%93server_model">server</a>) development.
+Frontend and backend code is typically written in different languages, and developers often specialize in one or the other.</p>
+<p>TODO: explain this section</p>
+<h2 id="frontend">Frontend</h2>
+<p>When it comes to web apps, the frontend is always written in (or compiled to) HTML, CSS, and JavaScript.
+TODO: a few words about how this section is laid out, and how to learn frontend development
+TODO: <a href="https://roadmap.sh/frontend">https://roadmap.sh/frontend</a></p>
+<h3 id="html">HTML</h3>
+<p><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> is the markup language (not a programming language) used to define the <em>structure</em> of web pages rendered by browsers.</p>
+<p>A HTML document is a (serialized) <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)">rooted tree</a>, where all internal nodes are <a href="https://en.wikipedia.org/wiki/HTML_element"><em>elements</em></a> — each with an optional list of <a href="https://en.wikipedia.org/wiki/HTML_attribute">attributes</a> — and leaves are either text or elements.
+There are a few different tags, and each tag supports a few different attributes.
+Browsers interpret these tags and attributes to load and display resources (or run them, in the case of JavaScript code).</p>
+<p>You should familiarize yourself with commonly used elements and attributes, as well as how they&rsquo;re used by the browser.
+A good way to build an intuition for this is to look at the HTML for a few random sites in your browser&rsquo;s developer console (open a website, right click anywhere, then select &lsquo;Inspect&rsquo;/&lsquo;Inspect Element&rsquo;).</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://learnxinyminutes.com/docs/html/">Learn X in Y minutes: HTML</a> – brief introduction to HTML.</li>
+<li><a href="https://www.codecademy.com/courses/learn-html">Codecademy: Introduction to HTML</a> – interactive HTML tutorial.</li>
+<li><a href="https://websitesetup.org/wp-content/uploads/2019/11/html5-tag-cheat-sheet-2019.pdf">HTML Cheat Sheet</a> – list of all HTML elements and their attributes.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">MDN: HTML Elements Reference</a> – detailed reference of all HTML elements and their attributes.</li>
+</ul>
+<h3 id="css">CSS</h3>
+<p><a href="https://en.wikipedia.org/wiki/CSS">CSS</a> is the style sheet language (also not a programming language) used to define the <em>appearance</em> of web pages rendered by browsers.</p>
+<p>CSS documents are paired with an HTML document (via <code>&lt;link rel=&quot;stylesheet&quot; ...&gt;...&lt;/link&gt;</code> or <code>&lt;style&gt;...&lt;/style&gt;</code> tags in the HTML document) to tell browsers how the elements in the document should be displayed.
+A CSS document is a list of <em>rules</em>, where each rule consists of a <em>selector</em> (specifying which elements it applies to) and a list of <em>properties</em> (key-value pairs describing specific aspects of how elements should be display).</p>
+<p>The CSS standard is fairly complex, and there are a <em>ton</em> of properties, so trying to learn all of it is pretty much futile.
+To further complicate things, new properties are constantly being added, and there are always lots of properties that aren&rsquo;t yet supported in all browsers.</p>
+<p>Still, everybody should have a basic familiarity with how rules work and some of the more common properties.
+A good way to get started is to look at and play around with CSS rules for a few random sites in your browser&rsquo;s developer console (open a website, right click anywhere, then select &lsquo;Inspect&rsquo;/&lsquo;Inspect Element&rsquo;).</p>
+<p>Because CSS can get pretty verbose, more expressive languages that compile to CSS are sometimes used.
+The most commonly is called <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)">Sass/SCSS</a>.</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://learnxinyminutes.com/docs/css/">Learn X in Y minutes: CSS</a> – brief introduction to CSS.</li>
+<li><a href="https://www.codecademy.com/learn/learn-css">Codecademy: Learn CSS</a> – interactive CSS tutorial.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN: CSS Reference</a> – detailed reference of CSS properties, concepts, etc.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">MDN: CSS Selector Reference</a> – detailed reference of CSS selectors.</li>
+<li><a href="https://caniuse.com/">Can I Use</a> – directory of which features (including CSS rules) are supported in which browsers.</li>
+<li><a href="http://vanseodesign.com/css/css-specificity-inheritance-cascaade/">Understanding Style Preference in CSS</a> – description of how CSS prioritizes when there are multiple matching rules.</li>
+<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks: A Complete Guide to Flexbox</a> – guide to flexbox (a set of properties used for building modern layouts).</li>
+</ul>
+<h3 id="javascript">JavaScript</h3>
+<p>Generally considered a poorly designed language, JavaScript (JS) is nonetheless the de facto standard (and only option) for running code in browsers.
+It is an <a href="https://en.wikipedia.org/wiki/Interpreted_language">interpreted language</a>, parsed and executed by a &lsquo;JavaScript engine&rsquo; bundled with the browser.</p>
+<p>JavaScript code in the browser typically interacts with one or more <em>Browser APIs</em> (also called &lsquo;Web APIs&rsquo;, &lsquo;Device APIs&rsquo;, etc.) and libraries (such as <a href="https://en.wikipedia.org/wiki/JQuery">JQuery</a> or <a href="https://en.wikipedia.org/wiki/React_(web_framework)">React</a>).
+The most fundamental browser API is the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API">DOM API</a>, which is used to interact with (read and modify) the tree defined by the current page&rsquo;s HTML.</p>
+<p>Unlike with CSS and HTML, trying to learn JavaScript by inspecting websites in the wild is hard, because most websites 1. run a <em>ton</em> of JavaScript (so it&rsquo;s hard to make sense of it all), and 2. obfuscate (<a href="https://en.wikipedia.org/wiki/Minification_(programming)">minify</a>) their JavaScript code to the point of illegibility.
+A better way is to open up the console in your browser&rsquo;s developer tools and try running commands.</p>
+<p>Traditionally, websites have been <em>server-side applications</em>: sites where the client loads a fully rendered HTML page from the server, and occasionally runs JS snippets to perform various actions (i.e. the HTML is rendered server-side).
+Our focus, however, is on building <em>client-side applications</em>: sites where where the entire HTML page is built <em>on the fly in the browser</em> using JS (i.e. the HTML is rendered client-side).
+We use a library called <a href="https://reactjs.org/">React</a> to accomplish this.</p>
+<p>New versions of JavaScript are released yearly, and confusingly have two names (both named after the standard specification, called <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a>).
+The most significant recent release is <a href="https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015">ES6/ECMAScript 2015</a>, which is generally well supported in modern browsers.</p>
+<p>It&rsquo;s becoming increasingly common to write frontend code in languages that <em>compile</em> to JavaScript, such as <a href="https://en.wikipedia.org/wiki/TypeScript">Typescript</a> or <a href="https://en.wikipedia.org/wiki/Clojure">Clojure/ClojureScript</a> (which we use).
+One up-and-coming alternative to compiling to JavaScript is to compile to <a href="https://en.wikipedia.org/wiki/WebAssembly">WebAssembly</a>.
+WebAssembly is an assembly-like language supported directly by browsers, that promises greater performance and support for threads.
+It is fairly new, and not yet widely used or supported.</p>
+<p>Things tend to move pretty fast in the JavaScript world, and staying on top of things is basically a full-time job.
+Unless you&rsquo;re a JS developer, having a basic familiarity with the syntax and basic concepts should suffice.</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://www.codecademy.com/learn/introduction-to-javascript">Codecademy: Introduction to JavaScript</a> – interactive JavaScript tutorial.</li>
+<li><a href="https://learnxinyminutes.com/docs/javascript/">Learn X in Y minutes: JavaScript</a> – brief introduction to JavaScript.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">MDN: JavaScript Reference</a> – detailed reference of the JavaScript language.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API">MDN: Web APIs</a> – detailed references of the various web APIs and interfaces.</li>
+<li><a href="https://reactjs.org/docs">React</a> – the library we use to build client-side apps.</li>
+</ul>
+<h2 id="backend">Backend</h2>
+<p>Things are much less standardized on the backend than on the frontend: there are no unifying technologies like HTML, CSS or JS.
+Still, there are a few core concepts that are important to be aware of, and that we&rsquo;ll discuss in brief here.</p>
+<p>TODO: <a href="https://roadmap.sh/backend">https://roadmap.sh/backend</a></p>
+<h3 id="web-servers">Web Servers</h3>
+<p>A <a href="https://en.wikipedia.org/wiki/Web_server"><em>web server</em></a> is any process (or hardware running any such process) that responds HTTP requests.
+The requests sent to web servers are typically instructions to create, read, update, or delete some <a href="https://en.wikipedia.org/wiki/Web_resource"><em>resource</em></a> (this set of operations is so common it has its own acronym: <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>).</p>
+<p>Web servers serve <a href="https://en.wikipedia.org/wiki/Static_web_page"><em>static files</em></a> (i.e. plain old files), <a href="https://en.wikipedia.org/wiki/Web_template_system"><em>templates</em></a> (HTML code that is dynamically generated), and/or <a href="https://en.wikipedia.org/wiki/Web_API"><em>web APIs</em></a> (interfaces for performing operations).</p>
+<p>Commonly served static files include HTML and CSS documents, JavaScript code, images (such as <a href="https://en.wikipedia.org/wiki/JPEG">JPEG</a>, <a href="https://en.wikipedia.org/wiki/PNG">PNG</a>, or <a href="https://en.wikipedia.org/wiki/SVG">SVG</a> files) and fonts (such as <a href="https://en.wikipedia.org/wiki/Web_Open_Font_Format">WOFF</a> files).
+These days, static files are typically served via <a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content Delivery Networks (CDNs)</a> instead of directly from a web server.
+This is done for performance and stability reasons (CDNs are distributed over the globe, usually provide <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack#Distributed_DoS">Distributed Denial-of-Service (DDoS)</a> protection, etc.).</p>
+<p>TODO: rewrite the following
+We won&rsquo;t talk much about templates, because our focus is on building client-side applications (where the HTML code is built dynamically in the frontend).</p>
+<p>TODO: a few words about APIs</p>
+<h3 id="services">Services</h3>
+<p>A <em>service</em> is any backend process that&rsquo;s deployed as part of a web app.
+Apps consist of one or more services, most of which typically act as a web server.
+In addition to acting as web servers, services commonly perform tasks like communicating with databases, sending requests to other web servers, performing computations, etc.</p>
+<p>Apps that consist of a single service are called <a href="https://en.wikipedia.org/wiki/Monolithic_application"><em>monoliths</em></a>.
+Traditionally most web applications were monoliths, but in recent years there&rsquo;s been a trend towards <a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">Service-oriented architectures</a> with an emphasis on <a href="https://en.wikipedia.org/wiki/Microservices">microservices</a>.
+Microservices are collections of lightweight services designed to one or a few things.
+We tend to favor microservices, but use a &ldquo;monolith-first&rdquo; approach (whereby we build larger services that we split up into smaller ones over time — this helps us avoid drawing the wrong boundaries for our microservices).</p>
+<p>The code that runs in a web server can be written in any language – common choices include Python, Java, .NET, Ruby, and JavaScript (using <a href="https://nodejs.org/en/">Node.js</a>).
+To perform whatever business logic they&rsquo;re meant to perform, web servers typically either include a host of <em>libraries</em> (for e.g. talking to databases, rendering HTML documents, handling authentication etc.) or utilize <em>web frameworks</em> (such as <a href="https://www.djangoproject.com/">Django</a> for Python, <a href="https://spring.io/">Spring</a> for Java, <a href="https://rubyonrails.org/">Ruby on Rails</a> for Ruby, and <a href="https://expressjs.com/">Express</a> for Node.js).
+Web frameworks are essentially collections of libraries &lsquo;pre-wired&rsquo; for building web apps such that developers essentially &lsquo;fill out the blanks&rsquo; – &ldquo;you call libraries, but frameworks call you&rdquo;.</p>
+<p>The main benefit of frameworks compared to libraries is that they act as a &lsquo;lingua franca&rsquo; and impose a certain rigidity upon the code, which can facilitate getting new developers up to speed with a project.
+Frameworks also make it easy (for developers who know them) to create prototypes and get started new applications.</p>
+<p>On the other hand, framework code can often seem &lsquo;magical&rsquo; and hard to understand (because the framework does almost all the work for you), and it can often be difficult or awkward to accomplish things not thought of or targeted by the framework developers.
+Swapping out or modifying components in a frameworks can also be hard or impossible.
+For these reasons, we tend to avoid frameworks in favor of libraries (or at least stick to <em>microframeworks</em>, which are frameworks that try to be a bit more lean/flexible).</p>
+<p>TODO: Nginx etc
+TODO: break some of the above out into best practices below</p>
+<h3 id="communication">Communication</h3>
+<p>There are tons of ways for backend services to communicate, but some are more common than others.</p>
+<p>When it comes to web APIs the most common method is to use <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> (JavaScript Object Notation – a simplified JavaScript inspired syntax) over HTTP.
+<a href="https://en.wikipedia.org/wiki/XML">XML</a> and <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> over HTTP are also used in some contexts.</p>
+<p>For service-to-service communications, JSON over HTTP is still common, but other data formats and protocols are often encountered as well.
+For instance, binary formats (like <a href="https://en.wikipedia.org/wiki/MessagePack">MessagePack</a>, <a href="https://github.com/protocolbuffers/protobuf">protobuf</a>, and <a href="https://en.wikipedia.org/wiki/Apache_Avro">Avro</a>) are often used to save space, bandwidth, and/or time.
+Message queues (like <a href="https://en.wikipedia.org/wiki/Apache_Kafka">Kafka</a>) are commonly used in place of HTTP (especially in microservice architectures) because they enable services to communicate asynchronously.</p>
+<p>Tools:</p>
+<ul>
+<li><a href="https://stedolan.github.io/jq/">jq</a> – a command line tool for working with JSON.</li>
+</ul>
+<h3 id="apis">APIs</h3>
+<p>A significant portion of backend work is typically spent working on and with <a href="https://en.wikipedia.org/wiki/Web_API#Server_side">HTTP APIs</a>.</p>
+<p>Modern APIs typically use JSON for data transfer, and more often than not follow the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> &lsquo;architecture style&rsquo; (at least to some degree; developers are often confused about what REST really is).
+Such APIs are called RESTful.
+REST is basically a set of guidelines for how to develop HTTP APIs such that they&rsquo;re understandable and maintainable.
+The core focus is on resources and how they&rsquo;re organized (i.e. how paths are associated with resources) and managed (i.e. how CRUD and other operations work).
+There&rsquo;s usually one <a href="https://en.wikipedia.org/wiki/Web_API#Endpoints"><em>endpoint</em></a> per action and resource; e.g. <code>POST /api/images</code> for posting a resource, <code>GET /api/images</code> for listing the resource, <code>GET /api/images/&lt;image-id&gt;</code> for retrieving a resource, and <code>DELETE /api/images/:image-id</code> for deleting a resource (sometimes <code>GET /foo</code> and <code>POST /foo</code> are considered to be the same endpoint, but accessed with different methods).</p>
+<p>Rest APIs are typically static, i.e. they can&rsquo;t easily be changed once people have started using them.
+When an API has to be modified, it&rsquo;s common to just release a new version in parallel with the old, the idea being that the old one will be retired once all users have moved to to the new one (which is typically never).
+Multiple API versions are typically handled via separate path prefixes (e.g. <code>/api/v1</code>, <code>/api/v2</code>, et cetera).</p>
+<p>Example — a minimal REST API using the <a href="https://en.wikipedia.org/wiki/Flask_(web_framework)">Flask</a> framework:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask, request, jsonify, abort
+app <span style="color:#f92672">=</span> Flask(<span style="color:#e6db74">&#39;my-app&#39;</span>)
+
+values <span style="color:#f92672">=</span> {}
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/values&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;GET&#39;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">list_values</span>():
+    <span style="color:#66d9ef">return</span> jsonify(list(values<span style="color:#f92672">.</span>keys()))
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/values/&lt;value_id&gt;&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;PUT&#39;</span>, <span style="color:#e6db74">&#39;DELETE&#39;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_or_modify_value</span>(value_id):
+    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;PUT&#39;</span>:
+        values[value_id] <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>get_json()
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#ae81ff">200</span>
+    <span style="color:#66d9ef">elif</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;GET&#39;</span>:
+        <span style="color:#66d9ef">if</span> value_id <span style="color:#f92672">in</span> values:
+            <span style="color:#66d9ef">return</span> jsonify(values[value_id])
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#ae81ff">404</span>
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">if</span> value_id <span style="color:#f92672">in</span> values:
+            <span style="color:#66d9ef">del</span> values[value_id]
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#ae81ff">200</span>
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#ae81ff">404</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    app<span style="color:#f92672">.</span>run()
+</code></pre></div><p>This app has a single resource (&lsquo;values&rsquo;) which can be listed, read, created/updated, and deleted via the four endpoints (<code>GET /values</code>, <code>GET/PUT/DELETE /values/&lt;value_id&gt;</code>).</p>
+<p>An alternative to REST that&rsquo;s been gaining traction recently is <a href="https://en.wikipedia.org/wiki/GraphQL">GraphQL</a>, which utilizes a single endpoint to respond to <a href="https://graphql.org/learn/queries/"><em>queries</em></a> (sort of like <a href="https://en.wikipedia.org/wiki/SQL">SQL</a>).</p>
+<p>TODO: exercises
+If you save the snippet above as <code>app.py</code> you can run it via <code>FLASK_APP=app.py flask run</code> (<code>flask</code> can be installed via <code>pip install flask</code> — see the section on Python if you don&rsquo;t have <code>pip</code>) and query it via e.g. <code>echo '{&quot;foo&quot;: &quot;bar&quot;}' | http PUT 127.0.0.1:5000/values/my-value</code> or <code>http GET 127.0.0.1:5000/values/my-value</code>.</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://restfulapi.net/">REST API Tutorial</a> – tutorial for writing REST APIs.</li>
+<li><a href="https://swagger.io/">Swagger</a> – popular tool for generating documentation for REST APIs.</li>
+<li><a href="https://graphql.org/learn/">Introduction to GraphQL</a> – tutorial for GraphQL.</li>
+</ul>
+<h3 id="best-practices">Best Practices</h3>
+<p>TODO: <a href="https://12factor.net/">https://12factor.net/</a></p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>

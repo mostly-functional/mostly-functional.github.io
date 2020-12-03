@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Networking - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Networking</h1>
+<div class="content ">
+  <p>Networking is a huge and complex topic; there are tons of technologies and protocols in use, each worthy of multiple books in their own right.
+Unless you&rsquo;re a network administrator or network developer, though, it&rsquo;s usually sufficient to be familiar with core concepts and some of the most common protocols.</p>
+<p>The aim of this section is to present the concepts and protocols most relevant to people working in web development.
+Being aware of the concepts and technologies presented below is useful, but there&rsquo;s no need to memorize all of it.</p>
+<h2 id="concepts">Concepts</h2>
+<p>Before we begin, we&rsquo;ll introduce some terms commonly used when discussing networks and networking:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Latency_(engineering)#Packet-switched_networks"><em>Latency</em></a>: the time it takes to reach a host over a network (latency is used in other contexts as well, but always as a measure of a delay).</li>
+<li><a href="https://en.wikipedia.org/wiki/Throughput"><em>Throughput</em></a> and <a href="https://en.wikipedia.org/wiki/Bandwidth_(computing)"><em>bandwidth</em></a>: the rate of data transfer across a network — usually measured in bits or bytes per second.</li>
+<li><a href="https://en.wikipedia.org/wiki/Computer_network"><em>Network</em></a>: a collections of connected computers.</li>
+<li><a href="https://en.wikipedia.org/wiki/Host_(network)"><em>Host</em></a>: a specific computer connected to a network.</li>
+<li><em>Local</em> and <em>remote</em>: commonly used names for TODO</li>
+<li><a href="https://en.wikipedia.org/wiki/Client%E2%80%93server_model"><em>Client</em> and <em>server</em></a>: an approach to distributed applications, where clients (e.g. web browsers) connect to servers (e.g. web servers) to perform tasks.</li>
+<li><a href="https://en.wikipedia.org/wiki/Computer_cluster"><em>Cluster</em></a>: a collection of hosts that work together to provide some service.</li>
+<li><a href="https://en.wikipedia.org/wiki/Private_network"><em>Private network</em></a>: a network that&rsquo;s connected to the internet (such as your home or office networks).</li>
+<li><a href="https://en.wikipedia.org/wiki/Virtual_private_network"><em>Virtual private network</em> (VPN)</a>: an extension of a private network, where computers can be connected over the internet but still act as if they&rsquo;re part of a local network.</li>
+</ul>
+<h2 id="ip">IP</h2>
+<p><a href="https://en.wikipedia.org/wiki/Internet_Protocol">IP (Internet Protocol)</a> is the main foundational protocol upon which the internet is built.</p>
+<p>IP is responsible for routing <em>packets</em> (chunks of some fixed size) of data to their destination host.
+It accomplishes this by means of logical <em>IP addresses</em> attached to the packets (each packet has a header containing source and destination addresses).</p>
+<p>There are two versions of IP in use: <a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> and <a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a>.</p>
+<p><a href="https://en.wikipedia.org/wiki/IPv4">IPv4</a> (by far the most common of the two) uses 32-bit addresses, typically written in &lsquo;dotted-decimal&rsquo; notation, as illustrated below:</p>
+<pre><code>  172   .   16   .  254   .   1
+┌──┴───┐ ┌──┴───┐ ┌──┴───┐ ┌──┴───┐
+10101100 00010000 11111110 00000001
+└────────────────┬────────────────┘
+               32 bits
+</code></pre><p>IPv4 addresses are typically subdivided into <em>address blocks</em> – addresses that start with a given prefix.
+These are denoted using <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">CIDR notation</a>, as illustrated below:</p>
+<p><code>172.16.254.0/24</code> (representing the range <code>172.16.254.0 - 172.16.254.255</code>):</p>
+<pre><code>  172   .   16   .  254   .   0
+┌──┴───┐ ┌──┴───┐ ┌──┴───┐
+10101100 00010000 11111110 --------
+└────────────┬───────────┘
+          24 bits
+</code></pre><p><code>172.16.128.0/17</code> (representing the range <code>172.16.128.0 - 172.16.255.255</code>):</p>
+<pre><code>  172   .   16   .  128   .   0
+┌──┴───┐ ┌──┴───┐ ┌──┴───┐
+10101100 00010000 1------- --------
+└────────┬────────┘
+      17 bits
+</code></pre><p>IPv4 reserves a bunch of address blocks for special uses, and has left the rest to be distributed to hosts on the internet.
+The following reserved blocks are noteworthy:</p>
+<ul>
+<li><code>0.0.0.0/8</code>: non-routable (i.e. not valid as destination) addresses used for the &lsquo;current network&rsquo;. Notably includes <a href="https://en.wikipedia.org/wiki/0.0.0.0">0.0.0.0</a>, which is used as a special value meaning &lsquo;any host&rsquo; when specifying from which hosts a web server should accept connections from.</li>
+<li><code>10.0.0.0/8</code>, <code>192.168.0.0/16</code>, and <code>172.16.0.0/12</code>: for use within private networks.</li>
+<li><code>127.0.0.0/8</code>: <a href="https://en.wikipedia.org/wiki/Loopback_address">loopback addresses</a> to the local host. Notably includes <code>127.0.0.1</code>, which is usually aliased as <a href="https://en.wikipedia.org/wiki/Localhost">localhost</a> in the hosts file (see below).</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/IPv6">IPv6</a> was devised in part as a solution to the <a href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">IPv4 address exhaustion problem</a> (IPv4 only allows 2^32 ≈ 4.3 billion unique addresses, which is too few).
+It uses 128-bit addresses, which are usually represented as groups of four hexadecimal digits, separated by colons (e.g. <code>2001:0008:0000:0000:0000:0000:0042:0001</code>), with consecutive sections of zeroes optionally replaced with <code>::</code> (e.g. <code>2001:0008::0042:0001</code>), and leading zeroes optionally omitted (e.g. <code>2001:8::42:1</code>).
+The loopback/localhost address is defined as <code>::1</code>.
+IPv6&rsquo;s uptake has been pretty slow but is increasing steadily.</p>
+<p>These days, most hosts sit on a private network, and share one or a few public IP addresses with the rest of the hosts on that network. This is accomplished via a process called <a href="https://en.wikipedia.org/wiki/Network_address_translation">network address translation (NAT)</a> (on your home and work networks, your router performs NAT).</p>
+<p>To get the local IP address of your machine, use <code>hostname -i</code> (Linux) or <code>ipconfig getifaddr en0</code> (macOS). To get the public address, use <code>curl ifconfig.io</code>.</p>
+<p>Utilities:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Traceroute">traceroute</a> – command line utility for displaying the route IP packets take to a given host.</li>
+<li><a href="https://en.wikipedia.org/wiki/Ping_(networking_utility)">ping</a> – command line utility for measuring response time for IP packets to a given host.</li>
+<li><a href="http://ifconfig.io/">ifconfig.io</a> – provides information about your external IP; <code>curl ifconfig.io</code> to find out your external IP address.</li>
+<li><a href="https://en.wikipedia.org/wiki/Ifconfig">ifconfig</a> – command line utility for configuring and running diagnostics on network devices and IP.</li>
+</ul>
+<h2 id="tcp">TCP</h2>
+<p>The other fundamental protocol is called <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP (Transmission Control Protocol)</a>.
+TCP builds upon IP&rsquo;s capabilities for sending packets between hosts to provide a method of sending packets between processes running on those hosts.
+TCP connections always involve a client and server, and the client always initiates the connection.</p>
+<p>The mapping from a host to a <em>process</em> running on a host happens via a <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)"><em>port number</em></a>.
+These are numbers addressed from 0-65535, managed by the OS.
+When a web server starts up, it a post from the OS, which is typically held until the process exits.
+Common protocols and services often run on specific, reserved ports, such as 80 for HTTP, 443 for HTTPS, and 22 for SSH.</p>
+<p>TCP also automates the tedium of ordering and assembling packets, checking them for errors, and resending them if needed.
+It provides an abstraction called <a href="https://en.wikipedia.org/wiki/Network_socket"><em>sockets</em></a> — essentially a persistent bidirectional byte stream between client and server — to processes.</p>
+<p>It should be noted that there&rsquo;s another protocol that is sometimes uses instead of TCP (e.g. in the upcoming <a href="https://en.wikipedia.org/wiki/HTTP/3">HTTP/3</a> standard), called <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a>.</p>
+<p>Utilities:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Lsof">lsof</a> – short for &lsquo;list open files&rsquo;, this command can be used to check which files are open (because Unix treats sockets as files). Examples: <code>lsof -i:1234</code> shows the process running on port 1234, <code>lsof -i -n -P</code> shows all open sockets.</li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">Wikipedia: List of TCP and UDP port numbers</a> – list of reserved (well-known and registered) ports.</li>
+</ul>
+<h2 id="domains-dns-and-host-files">Domains, DNS and Host Files</h2>
+<p><a href="https://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> (Domain Name System) is the system used to map <em>hostnames</em> (e.g. <code>google.com</code> or <code>www.facebook.com</code>) to IP addresses (and also other data).
+DNS is essentially a distributed database, consisting of tons of servers which each have part of the database.</p>
+<p>Hostnames are hierarchical, and the first level (the <a href="https://en.wikipedia.org/wiki/Top-level_domain">top-level domains</a> or TLDs – <code>.com</code>, <code>.se</code>, etc.) is special, and is mostly managed by NGOs and governments.
+Hostnames for each TLD are handed out by companies called <a href="https://en.wikipedia.org/wiki/Domain_name_registrar">domain name registrars</a>.
+There&rsquo;s also a protocol/tool called <a href="https://en.wikipedia.org/wiki/WHOIS">WHOIS</a> that can be used to retrieve from the registrar about who owns a domain.</p>
+<p>Resolving hostnames to IP addresses is typically handled transparently by the operating system, so there&rsquo;s seldom any reason to manually interact with DNS servers (except when managing DNS records).</p>
+<p>Before querying DNS servers, the operating system will check if the given hostname is present in the <em>hosts file</em> (<code>/etc/hosts</code> on most Unixes).
+The host file is sometimes manually edited for various purposes (e.g. to black-hole a domain or assign a custom name to an IP).</p>
+<p>TODO: subdomains</p>
+<p>Tools:</p>
+<ul>
+<li><code>hostname</code> – command line utility for displaying your computer&rsquo;s hostname in the local network.</li>
+<li><a href="https://en.wikipedia.org/wiki/Dig_(command)">dig</a> – command line utility for querying DNS servers.</li>
+<li><a href="https://en.wikipedia.org/wiki/Nslookup_(command)">nslookup</a> – command line utility for querying DNS servers (simpler to use than dig).</li>
+<li><a href="https://en.wikipedia.org/wiki/WHOIS#Software">whois</a> – command line utility for performing WHOIS queries.</li>
+</ul>
+<h2 id="urls">URLs</h2>
+<p>Specific resources hosted by an application are addressed via <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Locator">uniform resource locators (URLs)</a>.
+URLs typically have the following format and parts:</p>
+<pre><code>     host (hostname/ip)  port
+         ┌────┴────────┐ ┌┴┐
+ https://www.example.com:123/forum/questions/?tag=networking&amp;order=newest#top
+ └─┬─┘                       └─────┬────────┘ └───────────┬─────────────┘ └┬┘
+ scheme/protocol                  path                  query           fragment
+</code></pre><ul>
+<li><code>scheme</code> (sometimes called &lsquo;protocol&rsquo;) : the &lsquo;class&rsquo; of URL  — typically <code>http</code> or <code>https</code> (this is non-optional, but clients will often infer <code>http</code> if it&rsquo;s left out).</li>
+<li><code>userinfo</code>: authentication info — seldom used for HTTP/HTTPS.</li>
+<li><code>host</code>: the IP address or DNS hostname where the resource is served.</li>
+<li><code>port</code>: the port at which the resource is served (optional).</li>
+<li><code>path</code>: a <code>/</code>-separated reference to the object (sometimes referred to as &lsquo;endpoint&rsquo; when the target is an API).</li>
+<li><code>query</code>: a string containing a set of key-value pairs (optional)</li>
+<li><code>fragment</code>: a reference to a &lsquo;sub-resource&rsquo;, like a section of a document (optional).</li>
+</ul>
+<p>URLs are similar to <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">uniform resource identifiers (URIs)</a> – the difference is that URIs uniquely identify a resource but don&rsquo;t necessarily specify how to locate it.</p>
+<h2 id="http">HTTP</h2>
+<p><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Hypertext transfer protocol (HTTP)</a> is the communication protocol most commonly used for websites, web APIs, etc.
+It runs on top of TCP.</p>
+<p>An <em>HTTP client</em> (e.g. a web browser) queries an <em>HTTP server</em> by sending a <em>HTTP request</em>, and the servers responds with a <em>HTTP response</em>.</p>
+<p>An HTTP request is a series of lines of text, consisting of (in order):</p>
+<ul>
+<li>A <em>method</em> (or <em>verb</em> — specifies what type of action to perform).</li>
+<li>A <em>URL</em> (specifying the object on which to perform the action).</li>
+<li>The HTTP version (1.1 is most common, but 2.0 is gaining traction).</li>
+<li>Zero or more headers (a list of key-value pairs containing <a href="https://en.wikipedia.org/wiki/Metadata">metadata</a> about the request).</li>
+<li>A body (a blob of data to include with the request — only allowed for some request types).</li>
+</ul>
+<p>Example:</p>
+<pre><code>method    path    version
+┌┴┐ ┌──────┴────┐ ┌──┴───┐
+GET /foo/bar/1234 HTTP/1.1
+Host: www.example.com
+└─────────┬─────────┘
+        header
+</code></pre><p>The following methods are the most common:</p>
+<ul>
+<li><code>GET</code>: retrieves a resource; defined to be free of side-effects (i.e. it should not modify the resource). GET requests should not contain a body.</li>
+<li><code>POST</code>: creates a new resource under the given path (e.g. <code>POST /books/</code>). POST requests typically have a body.</li>
+<li><code>PUT</code>: creates or overwrites the resource at the given path (e.g. <code>PUT /books/123</code>). PUT requests typically have a body.</li>
+<li><code>DELETE</code>: deletes the resource at the given path. DELETE requests should not contain a body.</li>
+</ul>
+<p>An HTTP response is a series of lines of text, consisting of (in order):</p>
+<ul>
+<li>The HTTP version.</li>
+<li>A <em>status code</em> (a number from 100 to 599 indicating if the server was able to serve the request, if further action is required to complete the request, etc.).</li>
+<li>Zero or more headers.</li>
+<li>A body (a blob containing the actual response data — optional).</li>
+</ul>
+<p>Example:</p>
+<pre><code>
+version  status code
+┌──┴──┐  ┌──┴─┐
+HTTP/1.1 200 OK
+
+This is a response.
+└────────┬────────┘
+        body
+</code></pre><p>Status codes are grouped by the first number; <code>2xx</code> codes indicate success, <code>3xx</code> codes indicate redirection, <code>4xx</code> codes indicate a client error (i.e. the request was bad), and <code>5xx</code> codes indicate a server error.
+A few common codes:</p>
+<ul>
+<li><code>200 OK</code>: standard response for successful requests.</li>
+<li><code>201 Created</code>: the resource was successfully created.</li>
+<li><code>301 Moved Permanently</code>: this and all future requests should be directed to the given URI (used for instance to force HTTPS).</li>
+<li><code>400 Bad Request</code>: the request is invalid.</li>
+<li><code>401 Unauthorized</code>: you&rsquo;re not authenticated.</li>
+<li><code>403 Forbidden</code>: you&rsquo;re authenticated, but you&rsquo;re not authorized to access the resource.</li>
+<li><code>500 Internal Server Error</code>: your request broke the server.</li>
+<li><code>503 Service Unavailable</code>: the server is down.</li>
+</ul>
+<p>Any key may be used for HTTP headers, although some are more common than others in practice.
+It&rsquo;s good to have a basic understanding of the following headers:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent">User-Agent</a>: sent by the client as a means of identifying itself. Servers can use it to adapt the content they serve. Example: <code>Mozilla/5.0 (iPad; U; CPU OS 3_2_1 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Mobile/7B405</code>.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type">Content-Type</a>: sent by both clients and servers to identify the format of the data stored in the request/response body. The value is specified using a format called a <a href="https://en.wikipedia.org/wiki/Media_type">media type</a> (also called <em>MIME type</em>). Examples: <code>text/javascript</code>, <code>image/jpeg</code>, <code>text/html; charset=UTF-8</code>.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">Cache-Control</a>: sent by servers to tell clients how long they can cache the response, and by clients to tell servers to send a non-cached version of a resource. Examples: <code>Cache-Control: public, max-age=3600</code> (from server), <code>Cache-Control: no-cache</code> (from client).</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept">Accept</a>: sent by the client to tell the server which media/MIME types the response can have. Example: <code>text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8</code>.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization">Authorization</a>: sent by the client, containing authentication credentials. Example: <code>Basic YWxhZGRpbjpvcGVuc2VzYW1l</code>.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">Set-Cookie</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie">Cookie</a>: <code>Set-Cookie</code> is sent by the server to store key-value data on the client, and <code>Cookie</code> is sent back to the server on all subsequent requests. Example: <code>Set-Cookie: sessionId=38afes7a8</code> (from server), <code>Cookie: sessionId=38afes7a8</code> (from client, on subsequent requests).</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a> is an extension of HTTP, in which the traffic is served over <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a> (a cryptographic protocol for secure communications — see the Cryptography section).
+URLs for HTTPS begin with <code>http://</code> instead of <code>https://</code>.
+To serve resources using HTTPS, the server must have a valid <a href="https://en.wikipedia.org/wiki/Public_key_certificate">TLS certificate</a>, which can be acquired from a <a href="https://en.wikipedia.org/wiki/Certificate_authority">certificate authority</a> (these are companies that act as trusted third parties).
+We should enforce the use of HTTPS whenever possible and use <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> for certificates.
+For local development, we use a <a href="https://en.wikipedia.org/wiki/Self-signed_certificate">self-signed certificate</a>.</p>
+<p>The growing adoption of HTTPS and the ever growing number of resources served by websites have aggravated some efficiency issues in the &lsquo;standard&rsquo; version of HTTP (called <a href="">HTTP/1.1</a>).
+To mitigate these issues, two new versions of the protocol have been released (<a href="https://en.wikipedia.org/wiki/HTTP/2">HTTP/2</a>, which was introduced in 2015, and <a href="https://en.wikipedia.org/wiki/HTTP/3">HTTP/3</a>, which is being drafted).</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">MDN: HTTP</a> – reference and tutorials for HTTP.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">MDN: HTTP Headers</a> – information about common HTTP headers.</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">Wikipedia: List of HTTP Status Codes</a> – list of HTTP status codes.</li>
+</ul>
+<p>Tools:</p>
+<ul>
+<li><a href="https://curl.haxx.se/">cURL</a> – the most popular an HTTP client for the command line — you&rsquo;ll frequently encounter mentions of and code snippets that use cURL.</li>
+<li><a href="https://httpie.org/">HTTPie</a> – a user-friendly HTTP client for the command line; use this instead of cURL when manually exploring APIs.</li>
+<li><a href="https://www.getpostman.com/">Postman</a> – a popular graphical HTTP client.</li>
+</ul>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>

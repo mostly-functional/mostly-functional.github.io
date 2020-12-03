@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Software Engineering - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Software Engineering</h1>
+<div class="content ">
+  <p><a href="https://en.wikipedia.org/wiki/Software_engineering">Software engineering</a> is the practice of building software.
+This is a pretty broad topic, and it involves many activities apart from programming.</p>
+<p>In this section, we present and discuss some of these activities.
+If your role involves building software, or regularly interacting with people who build software, then you should familiarize yourself with the material in this section.</p>
+<h2 id="project-management-and-methodologies">Project Management and Methodologies</h2>
+<p>Software projects can get pretty large and complex, and the strategy by which they&rsquo;re <a href="https://en.wikipedia.org/wiki/Project_management">managed</a> can have massive effects.
+Some such strategies are given names and employed widely; these are called <a href="https://en.wikipedia.org/wiki/Software_development_process#Methodologies">development methodologies</a>.</p>
+<p>The dominant development methodology was historically <a href="https://en.wikipedia.org/wiki/Waterfall_model">waterfall development</a>, whereby the development of software was treated as a series of steps (gathering requirements, design, coding, testing, deployment, maintenance) to be competed one after another.</p>
+<p>As software has grown in complexity, the waterfall approach has fallen out of favor in favor of <a href="https://en.wikipedia.org/wiki/Agile_software_development">agile development</a>.
+This is a collection of practices, which focus on continuous and gradual change and improvement (as opposed to the sequential, up-front nature of waterfall development).
+These include:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Continuous_integration"><em>Continuous integration</em> (CI)</a>: the practice of continuously merging new features into a project&rsquo;s <a href="https://en.wikipedia.org/wiki/Branching_(version_control)#Development_branch">main source control branch</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Continuous_deployment"><em>Continuous deployment</em> (CD)</a>: the practice of continuously releasing new versions of the product (often many times a day).</li>
+<li><a href="https://en.wikipedia.org/wiki/Stand-up_meeting"><em>Standups</em></a>: short daily meetings with an entire team, where attendees give status updates and coordinate their efforts.</li>
+<li><a href="https://en.wikipedia.org/wiki/Pair_programming"><em>Pair programming</em></a>: a practice where two developers work together at one computer to solve a task.</li>
+<li><a href="https://en.wikipedia.org/wiki/Scrum_(software_development)"><em>Scrum</em></a>: a process whereby tasks are broken down into small goals, which are then compiled into <a href="https://en.wikipedia.org/wiki/Timeboxing">timeboxed</a> iterations called <em>sprints</em> (typically 1-2 weeks long).</li>
+<li><a href="https://en.wikipedia.org/wiki/Retrospective#Software_development"><em>Retrospectives</em></a>: the practice of regularly evaluating how well things are going (typically used in Scrum to evaluate the past sprint).</li>
+<li><a href="https://en.wikipedia.org/wiki/Cross-functional_team"><em>Cross-functional teams</em></a>: teams where people with different expertise collaborate towards a common goal (contrast with the <a href="https://en.wikipedia.org/wiki/Information_silo#Silo_mentality">silo approach</a> to teams).</li>
+<li><a href="https://en.wikipedia.org/wiki/Code_refactoring"><em>Refactoring</em></a>: rewriting code to improve legibility or reduce complexity, without altering its functionality.</li>
+<li><a href="https://en.wikipedia.org/wiki/Test-driven_development"><em>Test-driven development</em> (TDD)</a>: the practice of writing automated tests for software before the software itself is written.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="software-architecture">Software Architecture</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="version-control-and-git">Version Control and Git</h2>
+<p><a href="https://en.wikipedia.org/wiki/Version_control">Version control</a> (also known as <em>source control</em>) is the process of keeping track of and managing changes to files over time.
+Version control is done through <em>Version Control Systems (VCS)</em> (also known as <em>Source Control Management (SCM)</em>) — software that the automates the process of version control.
+Source control is essential when writing software collaboratively, and all serious software projects these days use a VCS.</p>
+<p>By far the most popular VCS (and the one we use) is <a href="https://en.wikipedia.org/wiki/Git">Git</a>.
+While learning the basics of Git is straightforward, it is a pretty complex tool, and can take some effort to master.
+We believe that this is mainly because it&rsquo;s hard to learn properly &lsquo;on the go&rsquo;.
+Fortunately, Git is based on some pretty simple concepts, and once you have an understanding for how Git works &lsquo;under the hood&rsquo;, the rest tends to follow fairly easily.
+We explain these concepts below, together with the most important commands.
+If you&rsquo;re new to Git, we recommended that you start out with an introductory resource like <a href="https://www.git-tower.com/learn/git/ebook/en/command-line/introduction">Learn Version Control with Git</a>, and then come back to this section.</p>
+<p>First off, let&rsquo;s list a few key terms and concepts:</p>
+<ul>
+<li><em>Repository</em>: Git&rsquo;s equivalent of a project. A single directory, in which Git tracks files. Often abbreviated to <em>repo</em>.</li>
+<li><em>Clone</em>: To copy a repository from a remote location to a local directory.</li>
+<li><em>Working tree</em>: Git&rsquo;s name for the current contents of your project directory.</li>
+<li><em>Blob</em>: TODO</li>
+<li><em>Tree</em>: TODO</li>
+<li><em>Commit</em>: TODO</li>
+<li><em>Branch</em>: TODO</li>
+<li><code>_master_</code>: The default name for a project&rsquo;s &lsquo;main&rsquo; branch, from/to which new branches are usually created/merged.</li>
+<li><em>Tag</em>: TODO</li>
+<li><em>Reference</em> (or <em>ref</em>): TODO</li>
+<li><code>_HEAD_</code>: TODO</li>
+<li><em>Remote</em>: TODO</li>
+<li><em>Origin</em>: TODO</li>
+<li><em>Push</em>: TODO</li>
+<li><em>Working tree</em>: TODO</li>
+<li><em>Staging area</em> (also called <em>index</em>): TODO</li>
+<li><em>Push</em>: TODO</li>
+<li><em>Fetch</em>: TODO</li>
+<li><em>Cherry-pick</em>: TODO</li>
+<li><em>Rebase</em>: TODO</li>
+<li><em>Merge</em>: TODO</li>
+</ul>
+<p>While there are GUIs, Git is first and foremost a command-line tool.
+Therefore, it&rsquo;s important for anyone intent on doing any serious work using Git to be somewhat familiar with the command-line interface, and especially the following commands:</p>
+<ul>
+<li><code>git init</code>: initializes the current directory as a Git repository. Actually creates a subdirectory called <code>.git</code>, containing all the metadata needed for the repository (this is where commits, branches, etc. end up). Example: <code>git init</code>.</li>
+<li><code>git clone</code>: clones a repository. Example: <code>git clone https://github.com/torvalds/linux.git</code> (clones the repository at the given URL to a local copy).</li>
+<li><code>git diff</code>: displays all unstaged or staged changes. Examples: <code>git diff</code> (shows unstaged changes), <code>git diff --cached</code> (shows staged changes).</li>
+<li><code>git log</code>: displays commit history. Examples: <code>git log</code> (shows a summary of all previous commits, relative to HEAD), <code>git log --stat</code> (shows the same summary, but includes a list of files changed for each commit), <code>git log --patch</code> (shows the same summary, but includes the diff for each commit), <code>git log some-file.html</code> (shows the log for given file, relative to HEAD), <code>git log some-commit-or-branch-or-tag</code> (shows the log, but relative to the provided commit, branch, or tag).</li>
+<li><code>git add</code>: stages changes. Examples: <code>git add som-file.html</code> (to stage a single file) <code>git add -p</code> (to interactively stage chunks of files).</li>
+<li><code>git commit</code>: creates a new commit. Examples: <code>git commit -m &quot;this is a commit message&quot;</code> (to commit all staged changes with the given message), <code>git commit -v</code> (to open an editor showing all staged changes, where you can enter a commit message).</li>
+<li><code>git fetch</code>: fetches all new data from a remote. Example: <code>git fetch</code> (to fetch all new and updated branches from the tracked remote).</li>
+<li><code>git push</code>: pushes data to a remote. Example <code>git push</code> (pushes the active branch to the tracked remote), <code>git push --force</code> (does the same thing, but overwrites any new commits on the remote), <code>git push --set-upstream origin</code></li>
+<li><code>git branch</code>: creates (or deletes) a branch. Examples: <code>git branch my-branch</code> (creates a local branch from the current commit), <code>git branch --delete my-branch</code> (deletes a local branch).</li>
+<li><code>git merge</code>: creates a merge commit. Example: <code>git merge some-branch</code> (creates a new merge commit on the current branch containing the changes from &lsquo;some-branch&rsquo;).</li>
+<li><code>git rebase</code>: performs a rebase. Example: <code>git rebase some-branch</code> (rebases the current branch onto &lsquo;some-branch&rsquo;), <code>git rebase -i some-branch</code> (interactively rebases the current branch onto &lsquo;some-branch&rsquo; — preferable), <code>git rebase -i head~5</code> (interactively rebases the last 5 commits onto the 6th latest commit).</li>
+</ul>
+<p>The following commands are also important, but can be somewhat confusing since they can do multiple things, <em>and</em> using them incorrectly can lead to lost data:</p>
+<ul>
+<li><code>git checkout</code>: changes the active commit (<code>HEAD</code>) to the provided commit/branch/tag, <em>and/or</em> discards changes to the provided file. Examples: <code>git checkout my-branch</code> (changes the working tree and <code>HEAD</code> to match <code>my-branch</code>), <code>git checkout my-file</code> (checks out <code>my-file</code> to match the latest commit), <code>git checkout -p HEAD~2 my-file</code> (interactively checks out <code>my-file</code> from two commits ago). If you pass <code>git checkout</code> a file or directory, Git will discard your changes without asking — this is one of a few ways you can lose data when working with Git, so be careful.</li>
+<li><code>git reset</code>: either unstages changes (acting as the inverse of <code>add</code>), <em>or</em> changes the current branch or tag to point to a different commit. Examples: <code>git reset</code> (unstages all changes), <code>git reset -p some-file</code> (interactively unstages changes in <code>some-file</code>), <code>git reset some-ref</code> (resets the current branch head to the given ref), <code>git reset --hard some-ref</code> (resets the current branch to head to the given ref, <em>and</em> discards all changes — be careful).</li>
+</ul>
+<p>The following commands are also good to be aware of:</p>
+<ul>
+<li><code>git pull</code>: first performs <code>git fetch</code> and then either <code>git rebase</code> or <code>git merge</code>. Examples: <code>git pull</code> (equivalent to <code>git fetch</code> followed by <code>git rebase origin/current-branch</code> (if <code>current-branch</code> is the currently checked out branch)), <code>git pull --rebase</code> (equivalent to <code>git fetch</code> followed by <code>git rebase origin/my-branch</code>).</li>
+<li><code>git stash</code>: moves changes to/from a special branch called the &lsquo;stash&rsquo; (which acts as a stack). Examples: <code>git stash</code> (moves all staged/unstage changes to the top of the stash), <code>git stash apply</code> (applies the commit at the top of the stash), <code>git stash drop</code> (removes the commit at the top of the stash), <code>git stash pop</code> (equivalent to <code>git stash apply &amp;&amp; git stash pop</code>).</li>
+<li><code>git cherry-pick</code>: commits a copy of the provided commit to the active branch (a rebase is essentially a series of cherry-picks). Example: <code>git cherry-pick some-branch</code> (cherry-picks the latest commit from the given branch).</li>
+<li><code>git config</code>: used to modify the local (at <code>.git/config</code>) or global Git configuration (at <code>~/.gitconfig</code>) — although it&rsquo;s often more convenient to just modify these files by hand.</li>
+<li><code>git reflog</code>: shows a log of all performed actions and commits. Can be used to recover accidentally removed or otherwise lost commits.</li>
+<li><code>git blame</code>: shows who committed each line in a file.</li>
+</ul>
+<p>Tips and best practices:</p>
+<ul>
+<li>Try to create <em>atomic commits</em> — commits with one logical change. If your commit messages need an &lsquo;and&rsquo; to completely describe your changes, you&rsquo;re doing it wrong.</li>
+<li>Use <code>git add -p</code>, <code>git reset -p</code>, and <code>git checkout -p</code>. Seeing which changes you&rsquo;re about to commit helps minimise errors, and facilitates making atomic commits.</li>
+<li>Prefer <code>git rebase</code> to <code>git merge</code> (and <code>git pull</code>). Rebasing leads to a much cleaner commit history than merges.</li>
+<li>Learn how interactive rebases (<code>git rebase -i</code>) work, and use them often. They give you a much better idea of what is happening, help build a nicer history, and can help you avoid unnecessary merge conflicts.</li>
+<li>Prefer <code>git fetch</code> followed by <code>git rebase -i</code> to <code>git pull --rebase</code>.</li>
+<li>Always use <code>git commit --verbose</code> (or <code>-v</code>) when committing. This helps minimise errors because it shows you which changes you&rsquo;re about to commit.</li>
+<li>If you&rsquo;re ever unsure about how a git command works, be aware that you can run <code>man git-&lt;command&gt;</code> to get a man page for that command.</li>
+<li>Take care to write proper commit messages. See <a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a>.</li>
+<li>Do all your work on feature branches. Keep branches limited to one feature where possible, and avoid &lsquo;long-running&rsquo; branches (i.e. merge back to master often).</li>
+<li>Prefer doing &lsquo;WIP commits&rsquo; (temporary commits that you can later undo via <code>reset</code>) on your feature branches to using <code>git stash</code>. The stash tends to get messy over time, and it can be hard to keep track of which stash entry &lsquo;belongs to&rsquo; which branch.</li>
+<li>Clean up the commit history on your feature branches before submitting them for review: do an interactive rebase against master, review your commits, and modify them as needed.</li>
+<li>Learn how to deal with merge conflicts.</li>
+<li>Learn how the reflog works. This will come in handy sooner or later.</li>
+<li>Don&rsquo;t rewrite published history, i.e. don&rsquo;t run <code>git push --force</code> on a branch that someone else has access to (because this could overwrite their data, or cause serious confusion on their end the next time they run e.g. <code>git pull</code>).</li>
+<li>Don&rsquo;t commit large files. Git isn&rsquo;t designed to handle large files, and committing large files will cause hard-to-get-rid-of performance problems (especially if they&rsquo;re changed frequently). Use something like <a href="https://git-lfs.github.com/">Git LFS</a> instead.</li>
+<li><a href="https://help.github.com/en/github/authenticating-to-github/about-commit-signature-verification">Sign your commits</a>.</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Resources:</p>
+<ul>
+<li><a href="https://www.git-tower.com/learn/git/ebook/en/command-line/introduction">Learn Version Control with Git</a> — introduction to Git.</li>
+<li><a href="https://www.codecademy.com/learn/learn-git">Codecademy: Learn Git</a> — interactive Git tutorial.</li>
+<li><a href="https://guides.github.com/introduction/git-handbook/">Git Handbook</a> – brief introduction to Git.</li>
+<li><a href="https://git-scm.com/book/en/v2">Pro Git</a> — thorough e-book about Git.</li>
+<li><a href="https://learnxinyminutes.com/docs/git/">Learn X in Y minutes: Git</a> – quick walkthrough of core concepts and commands.</li>
+<li><a href="https://jwiegley.github.io/git-from-the-bottom-up/">Git from the Bottom Up</a> – technical walkthrough of core concepts.</li>
+<li><a href="https://eagain.net/articles/git-for-computer-scientists/">Git for Computer Scientists</a> — technical walkthrough, targeting computer scientists.</li>
+<li><a href="https://learngitbranching.js.org/">Learn Git Branching</a> – interactive tutorial on Git&rsquo;s branching model and commands.</li>
+<li><a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet/">Git Cheat Sheet</a> – cheat sheet for common commands.</li>
+<li><a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a> – guidelines on writing commit messages.</li>
+</ul>
+<h2 id="testing-and-static-analysis">Testing and Static Analysis</h2>
+<p>Just because a program compiles and runs, that doesn&rsquo;t mean it actually <em>works</em>.
+It might contain <a href="https://en.wikipedia.org/wiki/Software_bug">bugs</a> that cause it to crash or produce incorrect results for certain (or all) inputs, or it might run too slowly, etc.</p>
+<p>The most common method of ensuring that a program works as intended is <a href="https://en.wikipedia.org/wiki/Software_testing">testing</a>.
+Traditionally, it would be the job of the <a href="https://en.wikipedia.org/wiki/Quality_assurance">quality assurance (QA)</a> team to ensure that the software behaves correctly.
+Developers would prepare a release and hand it off to the QA team, who would then <a href="https://en.wikipedia.org/wiki/Manual_testing">manually test</a> it and write down any problems they could find, and then give that list back to the developers.
+This procedure would be repeated until the software worked acceptably well (or some manager forced it to be released).</p>
+<p>These days, however, the QA process has been mostly automated (for good reasons).
+Typically, a software project contains one or more <a href="https://en.wikipedia.org/wiki/Test_automation">automated</a> <a href="https://en.wikipedia.org/wiki/Test_suite">test suites</a>, that developers can run at will to convince themselves that the software is behaving correctly.
+It is customary to write the tests at the same time as the software itself (or even before the software is written — this approach is called <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development (TDD)</a>), as well as to modify the tests over time when the software changes.</p>
+<p>There are different types of tests, targeting different use-cases.
+The following are some of the more common types:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Unit_testing">Unit tests</a>: tests that test specific functions or other small parts of the code in isolation. Unit tests typically run quickly, are robust, and can be made very fine-grained. On the other hand, writing and maintaining unit tests can be a lot of work, and unit tests can make code harder to refactor or otherwise evolve.</li>
+<li><a href="https://en.wikipedia.org/wiki/Integration_testing">Integration tests</a>: tests that verify the interaction between subsystems.</li>
+<li><a href="https://en.wikipedia.org/wiki/Functional_testing">Functional</a> and <a href="https://en.wikipedia.org/wiki/System_testing">system tests</a> (also <em>end-to-end tests</em>): tests that verify functionality for an entire feature, typically by interacting with it the way an end-user would (such as by interacting directly with the software&rsquo;s UI using a tool like <a href="https://en.wikipedia.org/wiki/Selenium_(software)">Selenium</a>). These tests are good for verifying that a feature works, but they tend to be slow and <em>flaky</em> (they&rsquo;ll sometimes fail for no good reason, due to e.g. timing issues).</li>
+<li><a href="https://en.wikipedia.org/wiki/Regression_testing">Regression tests</a>: tests that verify that features that used to work still do. Often built for <a href="https://en.wikipedia.org/wiki/Legacy_system">legacy software</a> that don&rsquo;t have a lot of tests, regression tests can be very helpful, but can also be a pain to maintain.</li>
+<li><a href="https://en.wikipedia.org/wiki/Regression_testing">Service tests</a>: functional tests for backend services. Can either test one service in isolation (analogous to unit tests), act as integration tests (testing the interaction between two services) or system tests (testing all services associated with a given feature).</li>
+<li><a href="https://en.wikipedia.org/wiki/Software_performance_testing">Performance tests</a>: tests that verify that a system runs sufficiently fast or efficient. The results often require manual interpretation.</li>
+</ul>
+<p>The following concepts are also important:</p>
+<ul>
+<li><em>Mocking</em>: the practice of replacing some part of a system with a &lsquo;fake&rsquo; (called a <a href="(https://en.wikipedia.org/wiki/Mock_object)"><em>mock</em></a>, <a href="https://en.wikipedia.org/wiki/Test_double"><em>test double</em></a> or <a href="https://en.wikipedia.org/wiki/Test_stub"><em>stub</em></a>) whose logic has been swapped out for purposes of a testing. The main purpose of mocking is to ensure that things are tested <em>in isolation</em> (e.g. by mocking other functions when running unit tests for a function, or mocking some service when running service tests).</li>
+<li><a href="https://en.wikipedia.org/wiki/Fuzzing">Fuzzing</a>: testing using randomly generated inputs. Can be used for basically any type of test.</li>
+<li><a href="https://en.wikipedia.org/wiki/Code_coverage">Coverage</a>: how much of given piece of software is &lsquo;touched&rsquo; by a given test suite.</li>
+</ul>
+<p>While testing can in principle be used to guard against any kind of unintended behavior, writing and maintaining tests can be a lot of work.
+In some cases, some of this work can be avoided by using automated software to verify that certain properties of the code or program are upheld.
+This is called <a href="https://en.wikipedia.org/wiki/Static_program_analysis"><em>static analysis</em></a>.
+The most commonly used static analysis tools are <em>linters</em> — software that analyzes source code to identify problematic behaviors or code style violations.
+Compilers typically perform some static analysis as well, as part of the compilation process.</p>
+<h2 id="debugging-and-benchmarking">Debugging and Benchmarking</h2>
+<p>Nobody writes bug-free code (including you).
+If you&rsquo;re lucky, your tests and static analysis tooling will catch your bugs.
+A lot of the time, though, they won&rsquo;t: compilers and linters only catch common coding mistakes — not code that you&rsquo;ve correctly written to do the wrong thing; and tests only test what they&rsquo;ve been written to test — there will always be scenarios you haven&rsquo;t written tests for, and sometimes you&rsquo;ll write tests that enforce the wrong behavior.</p>
+<p>The process of finding bugs in built software is called <a href="https://en.wikipedia.org/wiki/Debugging">debugging</a>.
+Knowing to debug well is an absolutely essential skill for software engineers.</p>
+<p>Many different techniques are used for debugging, and which are appropriate depends on the situation.
+Arguably the simplest is <em>print debugging</em> (or <em>tracing</em>) — the process of adding fine-grained log statements to your code, in the hope that these will lead to some insight into the bug.
+Another, more sophisticated approach is to use a <a href="https://en.wikipedia.org/wiki/Debugger">debugger</a> — a tool that allows the user to manually execute a program statement-by-statement, as well as inspect and modify variables at will.
+Debuggers are powerful, but they&rsquo;re generally not available for software running in production — rather, debuggers are mostly used either as a tool during development, or when reproducing production issues locally.</p>
+<p>Regardless of which tool is used, successful debugging typically follows the scientific model: you build a mental model of how you believe the system works, then iteratively attempt to falsify some aspect of your model, and update the model accordingly until your model includes the bug.</p>
+<p>Another common activity performed on built code is <a href="https://en.wikipedia.org/wiki/Benchmark_(computing)"><em>benchmarking</em></a>.
+Benchmarking is is when execution time or resource usage of a program is measured.
+This is typically done to estimate how well a program will handle various scenarios, to compare programs, and to guide <a href="https://en.wikipedia.org/wiki/Program_optimization">optimization</a> (it&rsquo;s sometimes done for debugging purposes as well).
+Benchmarking is often done using a <a href="https://en.wikipedia.org/wiki/Profiling_(computer_programming)">profiler</a> — a tool that tracks or estimates how much time a program spends running each part of the code.
+Like debuggers, profilers are typically not available in production.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="glossary">Glossary</h2>
+<p>Software engineers love to come up with colloquial terms for good/bad behaviors related to software engineering.
+Here are a few commonly ones:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/No_Silver_Bullet">Accidental and essential complexity</a>: Names for different types of complexity in software; <em>essential</em> complexity is there because the problem solved by the software is complex, whereas <em>accidental</em> complexity is complexity that exists for no good reason.</li>
+<li><a href="https://en.wikipedia.org/wiki/Anti-pattern">Anti-pattern</a>: a common approach to dealing with some specific task, that tends to be counterproductive or otherwise bad. The opposite of a design pattern.</li>
+<li><a href="https://en.wikipedia.org/wiki/Big_ball_of_mud">Big ball of mud</a>: a piece of software that lacks any discernible architecture. An anti-pattern common in enterprise code.</li>
+<li><a href="https://en.wikipedia.org/wiki/Big_Design_Up_Front">Big design up front (BDUF)</a>: a design approach where a product or feature is designed in detail before any code is written. Usually considered an anti-pattern, and closely related to the waterfall model.</li>
+<li><a href="https://en.wiktionary.org/wiki/bikeshedding">Bikeshedding</a>: the practice of arguing about things that don&rsquo;t really matter, in favor of arguing about things that do. An organizational anti-pattern.</li>
+<li><a href="https://en.wikipedia.org/wiki/Software_bloat">Bloat</a>: the tendency of software to get slower, larger, and less functional with time.</li>
+<li><a href="https://en.wikipedia.org/wiki/Cargo_cult_programming">Cargo cult programming</a>: the practice of adding stuff to software when there&rsquo;s no need to, typically in an effort to emulate other projects or companies. An architecture anti-pattern.</li>
+<li><a href="https://en.wikipedia.org/wiki/Software_design_pattern">Design pattern</a>: a common approach to dealing with some specific problem, that&rsquo;s been given a name.</li>
+<li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">Don&rsquo;t repeat yourself (DRY)</a>: code design principle — one should avoid repeating code, and prefer abstractions or other de-duplication strategies instead.</li>
+<li><a href="https://en.wikipedia.org/wiki/Feature_creep">Feature creep</a>: the tendency for products to accumulate features over time, typically resulting in bloat and/or a poor user experience.</li>
+<li><a href="https://en.wikipedia.org/wiki/KISS_principle">Keep it simple, stupid (KISS)</a>: design principle, stating that simplicity should be a key design goal.</li>
+<li><a href="https://en.wikipedia.org/wiki/Legacy_code">Legacy code</a>: old source code. Typically source code that&rsquo;s either not supported by anyone anymore, that has been inherited from somebody else, or code that&rsquo;s just hard and/or scary to maintain or modify.</li>
+<li><a href="https://en.wikipedia.org/wiki/Minimum_viable_product">Minimum viable product (MVP)</a>: a product with just enough features to satisfy costumers. Developing an MVP instead of a big design up-front can help reduce the risk of incorrect or otherwise bad assumptions being baked into the product.</li>
+<li><a href="https://en.wikipedia.org/wiki/Not_invented_here">Not-invented-here (NIH) syndrome</a>: the tendency at many workplaces to avoid using anything written by somebody else — usually applied to libraries or other technologies.</li>
+<li><a href="https://en.wikipedia.org/wiki/Overengineering">Overengineering</a>: the practice of adding more features or otherwise spending too much effort on a product.</li>
+<li><a href="https://en.wikipedia.org/wiki/Program_optimization#When_to_optimize">Premature optimization</a>: the practice of optimizing something before there&rsquo;s data that shows that the thing needs to be optimized. A type of overengineering.</li>
+<li><a href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of concerns (SoC)</a>: the practice of breaking source code up into distinct sections (modules, classes), each of which addresses a separate and distinct concern.</li>
+<li><a href="https://en.wikipedia.org/wiki/Information_silo#Silo_mentality">Silos</a>: organizational anti-pattern where teams are rigidly horizontally divided according to what their main activity is supposed to be (development, operations, QA, security, etc.). Traditionally the norm in larger organizations.</li>
+<li><a href="https://en.wikipedia.org/wiki/Spaghetti_code">Spaghetti code</a>: hard-to-follow and/or hard-to-maintain, messy source code.</li>
+<li><a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">You aren&rsquo;t gonna need it (YAGNI)</a>: design principle, stating that you should never add functionality unless an explicit need for it has been demonstrated. Related to the KISS principle.</li>
+</ul>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>

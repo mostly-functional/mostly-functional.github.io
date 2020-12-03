@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Algorithms and Data Structures - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Algorithms and Data Structures</h1>
+<div class="content ">
+  <p>Computer science students spend a lot of time building a deep understanding of algorithms and data structures.
+Luckily for you (unless you&rsquo;re a computer scientist) you&rsquo;ll most likely never need this knowledge in your day-to-day work.
+Nevertheless, it&rsquo;s good to be aware of some foundational algorithms and data structures.</p>
+<h2 id="graphs">Graphs</h2>
+<p>While research on algorithms and data structures tends to get pretty theoretical and involve sophisiticated mathematical machinery, this machinery can usually be dispensed with in non-mathematical contexts (such as this document).</p>
+<p>There is, however, one mathematical construct that occurs time and time again in applications: the <a href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"><em>graph</em></a>.</p>
+<p>Graphically, a graph is just a collection of dots, connected by lines or arrows, such as the following examples:</p>
+<pre><code>A)              | B)              | C)        | D)              | E)              | F)
+                |                 |           |                 |                 |
+ * --- * --- *  |  * --- * --- *  |  * --- *  |  * --&gt; * --&gt; *  |  * --&gt; *     *  |   * &lt;-- *
+       |        |  |     |        |           |        |        |  |     |     ^  |   |     ^
+       |        |  |     |        |           |        v        |  v     v     |  |   v     |
+ * --- *        |  * --- *        |  * --- *  |  * &lt;-- * --&gt; *  |  * &lt;-- * --&gt; *  |   * --&gt; *
+</code></pre><p>Mathematically, a graph is defined as a collection <code>(V, E)</code> of <em>vertices</em> (or <em>nodes</em> — the dots) <code>V = {v1, v2, v3, ...}</code> and a collection of (distinct) <em>edges</em> (the lines/arrows) <code>E = {e1, e2, ...}</code> of pairs of vertices.
+Graphs &lsquo;with lines&rsquo; are called <em>undirected graphs</em>, while graphs &lsquo;with arrows&rsquo; are called <a href="https://en.wikipedia.org/wiki/Directed_graph"><em>directed graphs</em></a> (in undirected graphs the edges are two-element sets, and in directed graphs they&rsquo;re ordered pairs).</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Path_(graph_theory)"><em>path</em></a> in a graph is any sequence of nodes where an edge exists between each subsequent pair of nodes (intuitively: where each &lsquo;step&rsquo; of the path goes through an edge) — in a directed graph, paths must &lsquo;follow the arrows&rsquo;.</p>
+<p>A graph that has no <a href="https://en.wikipedia.org/wiki/Cycle_(graph_theory)"><em>cycles</em></a> (i.e. there&rsquo;s no way to start at a vertex, follow edges without repetition, and end up back at the same vertex) is called <em>acyclic</em>. <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph"><em>Directed acyclic graphs</em> (DAGs)</a> are commonly encountered in applications.
+Graphs <code>A</code>, <code>C</code>, <code>D</code>, and <code>E</code> are acyclic, and <code>D</code> and <code>E</code> are both DAGs.</p>
+<p>A graph where there&rsquo;s at least one path between all pairs of vertices is called <a href="https://en.wikipedia.org/wiki/Connectivity_(graph_theory)"><em>connected</em></a>.
+Graphs <code>A</code>, <code>B</code>, and <code>E</code> above are connected.</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)"><em>tree</em></a> is a connected acyclic undirected graph.
+Graph <code>A</code> above is a tree, but <code>B</code> and <code>C</code> aren&rsquo;t (<code>B</code> has a cycle, and <code>C</code> is not connected).</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Polytree"><em>directed tree</em></a> (confusingly, often just called <em>tree</em>) is a connected acyclic directed graph, where no more than one edge &lsquo;points to&rsquo; each nodes.
+Graph <code>D</code> above is a directed tree, but <code>E</code> and <code>F</code> aren&rsquo;t (in <code>E</code>, multiple edges point to the bottom left node, and <code>F</code> has a cycle).
+Directed trees are commonly encountered in applications.
+In a directed tree, the node that &lsquo;points to&rsquo; a node is called its <em>parent node</em>, and the set of vertices it itself points to is called its <em>child nodes</em>.
+There&rsquo;s always one node that doesn&rsquo;t have a parent — this is called the <em>root node</em> of the tree (the upper left node in <code>D</code>).
+Nodes that don&rsquo;t have children are called <em>leaf nodes</em> (the lower left, lower right, upper right nodes in <code>D</code>).</p>
+<h2 id="data-structures">Data Structures</h2>
+<p>A <a href="https://en.wikipedia.org/wiki/Data_structure">data structure</a> is a structure for holding collections of items.
+Any given data structure comes with a set of operations, like <em>inserting</em>, <em>accessing</em>, and <em>removing</em> items.</p>
+<p>It&rsquo;s good to be familiar with the following fundamental data structures:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Array_data_structure">Arrays</a>: an array is a sequence of items — usually created with a fixed maximum size — where items can be inserted and accessed by their <em>index</em>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">Graphs</a>: a data structure representing a graph, where each node holds an item.</li>
+<li><a href="https://en.wikipedia.org/wiki/Linked_list">Linked lists</a>: a sequence of items, where each item holds a reference to the next (i.e. a type of graph).</li>
+<li><a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">Trees</a>: a data structure representing a directed tree, where each node holds an item. Trees typically support insertion, deletion, membership checks, and searches (the tree structure is often optimized for this).</li>
+<li><a href="https://en.wikipedia.org/wiki/Set_(abstract_data_type)">Sets</a>: a set is an unordered collection of items, where there can be no duplicate elements.</li>
+<li><a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Stacks</a>: a stack is a sequence of items, where items are both inserted and read/removed at one end. The order elements are removed from a stack is called <em>last in, first out</em> (or <em>LIFO</em>).</li>
+<li><a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)">Queues</a>: a queue is a sequence of items, where items are both inserted at one end and read/removed at the other end. The order elements are removed from a queue is called <em>first in, first out</em> (or <em>FIFO</em>).</li>
+<li><a href="https://en.wikipedia.org/wiki/Associative_array">Associative arrays</a> (also called <a href="https://en.wikipedia.org/wiki/Record_(computer_science)">records</a>, <em>maps</em>, and <em>dictionaries</em>): a collection of key-value pairs, where there can be no duplicate keys. Key-value pairs can be inserted and modified, as well as deleted (via the key), and values can be retrieved (also via the key).</li>
+</ul>
+<h2 id="algorithms">Algorithms</h2>
+<p>An <a href="https://en.wikipedia.org/wiki/Algorithm">algorithm</a> is a sequence of steps that describes how to solve a problem.
+Algorithms take an input (problem instance) and produce an output (solution).</p>
+<p>It&rsquo;s good to be aware of the following algorithms:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Sorting_algorithm">Sorting algorithms</a>: algorithms that put lists of objects in order.</li>
+<li><a href="https://en.wikipedia.org/wiki/Search_algorithm">Search algorithms</a>: algorithms that find things, such as <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">binary search</a> for finding an element in a sorted list, and <a href="https://en.wikipedia.org/wiki/Breadth-first_search">breadth-first search</a>/<a href="https://en.wikipedia.org/wiki/Depth-first_search">depth-first search</a> for finding elements in a graph.</li>
+<li><a href="https://en.wikipedia.org/wiki/Hash_function">Hash functions</a>: algorithms that map arbitrary values to strings of fixed size, such that collisions (many inputs being mapped to the same output) are unlikely. <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">Cryptographic hash functions</a> like <a href="https://en.wikipedia.org/wiki/SHA-2">SHA-2</a> and <a href="https://en.wikipedia.org/wiki/Bcrypt">bcrypt</a> are commonly used for authentication.</li>
+</ul>
+<h2 id="complexity">Complexity</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Computational_complexity_theory">computational complexity</a> of an algorithm is a measure of how the number of operations it performs increases with the size of its inputs.
+It&rsquo;s important because performance on large datasets tends to dominate in applications.</p>
+<p>Computational complexity is usually described using <a href="https://en.wikipedia.org/wiki/Big_O_notation">big O notation</a>; for any algorithm, this is (basically) the number of operations performed by the algorithm on an input containing <code>n</code> elements, in a worst-case scenario (i.e. for the slowest possible input), ignoring constant factors and lower-order terms (for instance, if an algorithm requires <code>50 + 2n + 3n²</code> operations, it is <code>O(n²)</code>).</p>
+<p>As a rule of thumb, an algorithm that looks at a fixed number of elements is <code>O(1)</code> (it has <em>constant complexity</em>), an algorithm that looks at each element in turn is <code>O(n)</code> (it has <em>linear complexity</em>), an algorithm that looks at every pair of elements is <code>O(n²)</code>, and an algorithm that looks at every permutation of elements is <code>O(n!)</code> (factorial complexity — such algorithms basically take forever even for small number of elements).</p>
+<p>For example the following algorithm — which computes the sum of a list of numbers — is <code>O(n)</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_numbers</span>(numbers):
+    sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> numbers:
+        sum <span style="color:#f92672">+=</span> number
+    <span style="color:#66d9ef">return</span> sum
+</code></pre></div><p>&hellip;whereas the following algorithm — which computes the sum of all pairs in a list of numbers — is <code>O(n²)</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_number_pairs</span>(numbers):
+    sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> i, number_1 <span style="color:#f92672">in</span> enumerate(numbers):
+        <span style="color:#66d9ef">for</span> number_2 <span style="color:#f92672">in</span> numbers[i:]:
+            sum <span style="color:#f92672">+=</span> number_1 <span style="color:#f92672">+</span> number_2
+    <span style="color:#66d9ef">return</span> sum
+</code></pre></div><p>Different algorithms for solving the same problem often differ in complexity; for instance, the following algorithm does the same thing as the previous one, but is <code>O(n)</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum_number_pairs</span>(numbers):
+    sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    count <span style="color:#f92672">=</span> len(numbers)
+    <span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> numbers:
+        sum <span style="color:#f92672">+=</span> number
+    <span style="color:#66d9ef">return</span> sum <span style="color:#f92672">*</span> count
+</code></pre></div>
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>

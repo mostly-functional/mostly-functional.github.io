@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Unix - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Unix</h1>
+<div class="content ">
+  <p><a href="https://en.wikipedia.org/wiki/Unix">Unix</a> is the dominant family of operating systems for servers and web development.
+For this reason, it&rsquo;s important to have a solid understanding of how Unix systems work and how to work effectively with them for basically anybody working in the web development space.</p>
+<p>Many aspects of Unix are standardized (through the <a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> standard).
+This means that Unixes are very similar from a usage standpoint, and that programs are often available for more than one Unix.</p>
+<p>The Unixes you&rsquo;re by far most likely to encounter are <a href="https://en.wikipedia.org/wiki/MacOS">macOS</a> (formerly OS X) and <a href="https://en.wikipedia.org/wiki/Linux">Linux</a>.
+<a href="https://en.wikipedia.org/wiki/Linux">Linux</a> is the dominant <a href="https://en.wikipedia.org/wiki/Open-source_software">open-source</a> Unix kernel and OS family, especially in the server space (but also in e.g. mobile phones — <a href="https://en.wikipedia.org/wiki/Android_(operating_system)">Android</a> is a Linux OS).
+<a href="https://en.wikipedia.org/wiki/MacOS">macOS</a>, which is the most popular Unix OS for personal computers, is a proprietary OS that only runs on hardware produced by <a href="https://en.wikipedia.org/wiki/Apple_Inc.">Apple</a>.
+The main difference between Linux and macOS from a usage standpoint (as long as you&rsquo;re not working with kernel APIs) is that they tend to come with slightly different variants of many tools (Linux uses the <a href="https://en.wikipedia.org/wiki/GNU_Project">GNU</a> suite of utilities, whereas macOS uses the <a href="https://en.wikipedia.org/wiki/Berkeley_Software_Distribution">BSD</a> suite).</p>
+<p>In this section, we present some core Unix concepts and utilities, and discuss how to learn to work effectively with Unix (and in particular, the Unix shell).</p>
+<p>TODO: <a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard</a></p>
+<p>TODO: <a href="https://linuxjourney.com/">https://linuxjourney.com/</a></p>
+<h2 id="concepts">Concepts</h2>
+<p>TODO: rewrite</p>
+<p>TODO: multi-user system, user management, permissions, root user, sudo etc</p>
+<p>TODO: superuser (called <em>root</em> in Unix — not to be confused with the <em>root directory</em>)</p>
+<p>On Unix systems, users optionally belong to a set of <a href="https://en.wikipedia.org/wiki/Group_identifier"><em>groups</em></a>, and each file and directory also has an associated group.
+On Unix systems, permissions are granted on a file-by-file basis, and separately for the <em>owner</em>, the <em>group</em>, and <em>others</em> (everybody else).
+There are three distinct permissions that can be granted for files: <em>read</em> (the file may be read), <em>write</em> (the file may be written to), and <em>execute</em> (if it&rsquo;s a program, the file may be executed).
+For directories, the same three permissions are used, but they have different meanings (<em>read</em> means files in the directory may be listed, <em>write</em> means files in the directory may be created/deleted/renamed, and <em>execute</em> means the directory may be searched).</p>
+<p>TODO: the file system, everything is a file, home directories, dotfiles, symlinks, <code>.</code> and <code>~</code>, current working directory</p>
+<p>TODO: binaries, libraries</p>
+<p>TODO: <a href="https://en.wikipedia.org/wiki/Executable_and_Linkable_Format">ELF</a>
+The OS locates executable programs and shared libraries via special environment variables (called <code>PATH</code> and <code>LD_LIBRARY_PATH</code> on Unix).</p>
+<p>TODO: <a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a></p>
+<p>TODO: pipes, stdout/in/err, shell/command line, aliases</p>
+<p>TODO: package managers</p>
+<h2 id="the-command-line">The Command Line</h2>
+<p>TODO: explain why the command line is important</p>
+<p>TODO: common tools</p>
+<h3 id="ssh">SSH</h3>
+<p><a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH (Secure Shell)</a> is the protocol and tool most commonly used to securely access (to run an interactive shell or command) remote hosts over a network.
+It supports multiple authentication methods, but by far the most common is public-key cryptography (see the &lsquo;Cryptography&rsquo; section).</p>
+<p>TODO: more</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>

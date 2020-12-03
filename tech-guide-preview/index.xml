@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech From the Ground Up</title>
+    <link>http://mostlyfunction.al/tech-guide-preview/</link>
+    <description>Recent content on Tech From the Ground Up</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="http://mostlyfunction.al/tech-guide-preview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/introduction/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/introduction/</guid>
+      <description>What&amp;rsquo;s this document good for?</description>
+    </item>
+    
+    <item>
+      <title>Computer Architecture and Operating Systems</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/</guid>
+      <description>A whirlwind tour of how your computer is put together.</description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/networking/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/networking/</guid>
+      <description>How computers communicate.</description>
+    </item>
+    
+    <item>
+      <title>Databases</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/databases/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/databases/</guid>
+      <description>The bare minimum you should know about data storage.</description>
+    </item>
+    
+    <item>
+      <title>Unix</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/unix/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/unix/</guid>
+      <description>One operating system to rule them all.</description>
+    </item>
+    
+    <item>
+      <title>Algorithms and Data Structures</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/</guid>
+      <description>A friendly introduction to topics at the heart of computer science.</description>
+    </item>
+    
+    <item>
+      <title>Programming Languages</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/programming-languages/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/programming-languages/</guid>
+      <description>How programming languages work and how they differ.</description>
+    </item>
+    
+    <item>
+      <title>Software Engineering</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/software-engineering/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/software-engineering/</guid>
+      <description>Building software isn&amp;rsquo;t just about writing code.</description>
+    </item>
+    
+    <item>
+      <title>Operations</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/operations/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/operations/</guid>
+      <description>How modern organizations run their software.</description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/security/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/security/</guid>
+      <description>The bare minimum anyone should know about security.</description>
+    </item>
+    
+    <item>
+      <title>Web App Development</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/web-app-development/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/web-app-development/</guid>
+      <description>How web apps work.</description>
+    </item>
+    
+    <item>
+      <title>Misc</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/misc/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/misc/</guid>
+      <description>Topics that we couldn&amp;rsquo;t figure out where to put (yet!)</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Databases - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Databases</h1>
+<div class="content ">
+  <p>Any application that keeps <a href="https://en.wikipedia.org/wiki/State_(computer_science)">state</a> needs a mechanism for storing that state so that it can be <em>persisted</em> (retained after the application instance stops running).
+For processes running locally on a user&rsquo;s computer, state is often stored as files on disk, but for any other type of tasteful application (e.g. backend services), state is stored in a <a href="https://en.wikipedia.org/wiki/Database"><em>database</em></a>.</p>
+<p>It is useful for anyone working on projects involving databases to have a basic understanding of database concepts, as well as how to perform basic tasks using the specific databases used for the projects at hand.
+Most products use Relational/SQL databases (described below), so a basic understanding of SQL is useful for pretty much anyone.</p>
+<h2 id="concepts">Concepts</h2>
+<p>Databases are usually managed by an application called a <a href="https://en.wikipedia.org/wiki/Database#Database_management_system">database management system (DBMS)</a>.
+DBMSs are typically run on dedicated hosts (or clusters of hosts) on the same network as the apps that use them (and the same DBMS instance/cluster is sometimes shared between multiple applications).</p>
+<!-- raw HTML omitted -->
+<p>Databases usually store data in <a href="https://en.wikipedia.org/wiki/Row_(database)"><em>rows</em></a> (or <em>records</em>).
+A collection of similar rows is usually called a <a href="https://en.wikipedia.org/wiki/Table_(database)"><em>table</em></a>.
+Typically, each row in a table consists of a set of values for a list of <a href="https://en.wikipedia.org/wiki/Column_(database)"><em>columns</em></a>.</p>
+<p>The most common operations on databases are typically <em>inserts</em> (storing data), <em>updates</em> (modifying data), <em>deletes</em> (removing data), and <em>queries</em> (requesting data back from the system).
+DBMSs define APIs or <a href="https://en.wikipedia.org/wiki/Domain-specific_language">domain-specific languages (DSLs)</a> for these operations.
+Querying, in particular, is usually done via a <a href="https://en.wikipedia.org/wiki/Query_language"><em>query language</em></a>.
+Apart from requesting records, query languages often permit more complicated operations like computing statistics or joining data from multiple tables.</p>
+<p>Most DBMSs also allow/require the user to define the structure of the data stored in each table.
+The language used to produce these definitions is called a <a href="https://en.wikipedia.org/wiki/Data_definition_language"><em>data definition language</em></a>.</p>
+<!-- raw HTML omitted -->
+<h2 id="relationalsql-databases">Relational/SQL Databases</h2>
+<p><a href="https://en.wikipedia.org/wiki/Relational_database">Relational databases</a> are the most commonly used types of databases.</p>
+<p>These are built around the <a href="https://en.wikipedia.org/wiki/Relational_model"><em>relational model</em></a>, which uses tables (or <em>relations</em>) with columns and rows.
+Each row is is identified by a unique value in a specific column (the <a href="https://en.wikipedia.org/wiki/Primary_key"><em>primary key</em></a>).
+Other columns may contain references to rows in other tables (called <a href="https://en.wikipedia.org/wiki/Foreign_key"><em>foreign keys</em></a>).
+These references can be utilized to perform complex queries involving multiple tables.</p>
+<p>The set of columns for each table are specified in the <em>table definition</em>, together with the primary key and optionally a set of constraints.
+Columns always have a <em>data type</em> (e.g. <code>string</code>, <code>boolean</code>, <code>int</code>, etc.), which constrains the values that may be inserted in that column.
+Unless specified in the column definition, any value can also be <code>NULL</code> (i.e. missing), regardless of the data type.</p>
+<p>All major <a href="https://en.wikipedia.org/wiki/Relational_database#RDBMS"><em>relational DBMSs</em> (RDBMSs)</a> use (some dialect of) <a href="https://en.wikipedia.org/wiki/SQL">SQL</a> as their data definition and query language (as well as for inserts, deletes, and updates).
+As a consequence, relational databases are often referred to as <em>SQL Databases</em>.</p>
+<p>We use the DBMS called <a href="https://en.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a> (often referred to as just &lsquo;Postgres&rsquo;), which is the leading open source RDBMS.</p>
+<p>Everybody should have a basic familiarity with SQL and at least one RDBMS.
+This means knowing how to interact with the RDBMS via a command-line or UI tool as well as having a basic familiarity with SQL.
+Try the &lsquo;Learning SQL&rsquo; guide below, and try running a PostgreSQL instance on your machine and interacting with it via psql.</p>
+<p>Learning resources:</p>
+<ul>
+<li><a href="https://dataschool.com/learn-sql/">Learn SQL</a> – an interactive online SQL tutorial.</li>
+<li><a href="https://pgexercises.com/">PostgreSQL Exercises</a> – a set of interactive exercises for PostgreSQL&rsquo;s flavor of SQL.</li>
+<li><a href="https://mystery.knightlab.com/">SQL Murder Mystery</a> – an interactive SQL challenge.</li>
+</ul>
+<p>Tools:</p>
+<ul>
+<li><a href="http://postgresguide.com/utilities/psql.html">psql</a> – the official command-line tool for working with PostgreSQL databases.</li>
+<li><a href="https://www.pgcli.com/">pgcli</a> – a more user-friendly alternative to psql.</li>
+<li><a href="https://www.pgadmin.org/">PgAdmin</a> – a UI for working with PostgreSQL databases.</li>
+</ul>
+<h2 id="non-relational-databases">Non-relational Databases</h2>
+<p>While popular, the relational model has shortcomings that make it unsuitable for certain applications.
+Importantly, relational databases typically can&rsquo;t be <em>distributed</em> (split across multiple DBMS instances communicating over a network), and thus can&rsquo;t scale past certain amounts of data.</p>
+<p>There are other, non-relational DBMSs — often called <a href="https://en.wikipedia.org/wiki/NoSQL">NoSQL</a> DBMSs — that sacrifice some features found in SQL databases (for instance, they might not have tables) in favor of being easily distributable.</p>
+<p>Some examples of non-relational databases models:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Key-value_database">Key-value databases</a>: databases that store items (values) addressed by keys — ignoring relations between these items. Popular key-value DBMSs include <a href="https://en.wikipedia.org/wiki/Redis">Redis</a> (often used by backend services to cache data) and <a href="https://en.wikipedia.org/wiki/Apache_Cassandra">Cassandra</a> (often used in place of a RDBMS for very large datasets).</li>
+<li><a href="https://en.wikipedia.org/wiki/Document-oriented_database">Document-oriented databases</a>: key-value databases, where the data has some structure (e.g. JSON or XML) and can be queried to some extent. One popular document-oriented DBMS is <a href="https://en.wikipedia.org/wiki/MongoDB">MongoDB</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Graph_database">Graph databases</a>: document-oriented databases, where items may also have an optional (arbitrary) relation to other items.</li>
+</ul>
+<p>It&rsquo;s good to be aware of the existence of NoSQL DBMSs, but there&rsquo;s no need to go in-depth unless you&rsquo;re working directly with one.
+And unless you&rsquo;ve demonstrated that a traditional DBMS isn&rsquo;t sufficient for your application, you probably shouldn&rsquo;t be.</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>

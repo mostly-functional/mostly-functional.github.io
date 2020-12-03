@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Operations - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Operations</h1>
+<div class="content ">
+  <p>Work that&rsquo;s done to manage, run or support software after it&rsquo;s been built is referred to using the umbrella term <a href="https://en.wikipedia.org/wiki/Data_center_management#Operations"><em>operations</em></a>, or <em>ops</em> for short.
+This includes configuring and managing servers and databases, deploying and monitoring software, handling backups, etc.</p>
+<p>In this section, we discuss the major operations tasks encountered in modern applications, as well as how modern companies handle them.
+This is mostly done using various tools designed to solve a particular set of problems.
+As a result, this section is mostly a walkthrough of commonly used tools; what they&rsquo;re for, and how they&rsquo;re used.</p>
+<p>It&rsquo;s important for anybody in an engineering or engineering management role to be familiar with the contents of this section.
+For others, a basic familiarity with the basic concepts below should suffice.</p>
+<h2 id="devops-and-site-reliability-engineering">DevOps and Site Reliability Engineering</h2>
+<p>Traditionally, operations was a collection of mostly manual activities, which would be handled by dedicated <a href="https://en.wikipedia.org/wiki/System_administrator"><em>system administrators</em></a> (or <em>sysadmins</em> for short).
+Generally, developers would never do or be permitted to operations-related work (in other words, operations was a silo).</p>
+<p>In recent years, though, people have realized that carrying out operations work manually is error-prone and inefficient, and there has been a trend towards automating the work.
+Since <em>developers</em> are generally the people best-suited for driving and managing automation, the barrier between developers and operations has essentially broken down in recent years, as many areas of ops have increasingly become software development activities.</p>
+<p>This trend has been given the moniker <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>.
+DevOps is a rather nebulous term that gets through thrown around a lot despite lacking a generally agreed-upon definition — rather it&rsquo;s typically taken to mean any practice or activity that involves or facilitates collaboration between development and operations.
+This is generally taken to mean Agile practices like continuous integration and continuous delivery, infrastructure automation, and any tooling that facilitates these.</p>
+<p>Such activities include continuous integration, configuration management, and infrastructure automation (all discussed below).</p>
+<p>Another related term is <a href="https://en.wikipedia.org/wiki/Site_Reliability_Engineering">site reliability engineering (SRE)</a>.
+This is typically taken to be roughly the same thing as DevOps, but with a more directed focus on improving reliability and performance of backend services.</p>
+<h2 id="cloud-platforms">Cloud Platforms</h2>
+<p>Traditionally, web companies would rent space in or run one or more <a href="https://en.wikipedia.org/wiki/Data_center">data center</a>.
+Here, they would place servers that they would own and manage, that would power their backends.
+These days, most companies instead use virtual servers, managed by a <a href="https://en.wikipedia.org/wiki/Cloud_computing">cloud provider</a>.</p>
+<p>The biggest cloud providers for software projects are <a href="https://en.wikipedia.org/wiki/Amazon_Web_Services">Amazon Web Services (AWS)</a>, <a href="https://en.wikipedia.org/wiki/Google_Cloud_Platform">Google Cloud Platform</a>, and <a href="https://en.wikipedia.org/wiki/Microsoft_Azure">Microsoft Azure</a>.</p>
+<p>Unfortunately, the big cloud providers are essentially <a href="https://en.wikipedia.org/wiki/Closed_platform">walled gardens</a> — each with their own <a href="https://en.wikipedia.org/wiki/Proprietary_software">proprietary</a> concepts, services, and solutions.
+This means that although using one or more cloud providers is almost ubiquitous, there&rsquo;s not too much in terms of &lsquo;generally applicable&rsquo; knowledge to acquire when it comes to cloud computing, and people and organizations tend to somewhat haphazardly pick one cloud provider to learn/use and stick with it.</p>
+<p>All major cloud offerings, however, are built upon the following core concepts:</p>
+<ul>
+<li><em>Virtual machines instances</em>: TODO</li>
+<li><a href="https://en.wikipedia.org/wiki/Virtual_private_cloud">Virtual private clouds (VPCs)</a>: virtual networks where users can run virtual machines.</li>
+<li><a href="TODO">Virtual machine images</a>: TODO</li>
+</ul>
+<p>They also all support the following:</p>
+<ul>
+<li><em>Firewall rules</em>: TODO</li>
+<li><a href="https://en.wikipedia.org/wiki/Autoscaling">Autoscaling</a>: TODO</li>
+<li>TODO: more</li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li><a href="https://aws.amazon.com/getting-started/">AWS: Getting Started Resource Center</a> — AWS&rsquo;s getting started guide.</li>
+<li><a href="https://cloud.google.com/gcp/getting-started/">GCP: Getting Started with Google Compute Platform</a> — GCP&rsquo;s getting started guide.</li>
+<li><a href="https://docs.aws.amazon.com/">AWS: Documentation</a> — the AWS documentation.</li>
+<li><a href="https://cloud.google.com/docs/">GCP: Documentation</a> — the GCP documentation.</li>
+</ul>
+<h2 id="version-control-and-issue-tracking-platforms">Version Control and Issue Tracking Platforms</h2>
+<p>Because building software is such a collaborative process, it makes a lot of sense to use special-purpose tools to deal with tasks like <a href="https://en.wikipedia.org/wiki/Issue_tracking_system">issue tracking</a>, source code hosting, and related tasks.</p>
+<p>There are multiple platforms that provide convenient interfaces for one or more of these tasks.
+Examples of such sites and services include <a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>, <a href="https://en.wikipedia.org/wiki/GitLab">GitLab</a>, <a href="https://en.wikipedia.org/wiki/Bitbucket">BitBucket</a>, and <a href="https://en.wikipedia.org/wiki/Jira_(software)">Jira</a>.</p>
+<p>While these platforms are usually available as cloud services, companies often choose to host them themselves on internal networks for compliance or security reasons.</p>
+<h2 id="cicd-platforms">CI/CD Platforms</h2>
+<p>As mentioned previously, <a href="https://en.wikipedia.org/wiki/Continuous_integration"><em>continuous integration</em> (CI)</a> is the practice of continuously merging new features into a project&rsquo;s main development branch, and <a href="https://en.wikipedia.org/wiki/Continuous_deployment"><em>continuous deployment</em> (CD)</a> is the practice of continuously releasing new versions of a product.</p>
+<p>CI and CD (which are widely regarded to be best practices) are pretty hard to do smoothly and efficiently without a completely automated build and testing process, and an at least mostly automated release process.</p>
+<p>It&rsquo;s certainly possible to handle this automation via custom scripts, but most teams opt to instead use a <a href="https://en.wikipedia.org/wiki/Continuous_integration#CI/CD">CI/CD platform</a>.
+These are services (running either in the cloud or self-hosted), using which users can define so-called <em>CI pipelines</em> and <em>CD pipelines</em>, which handle testing/building/packaging and deploying service, respectively.
+Typically these integrate with version control platforms, to enrich e.g. pull requests with build status.</p>
+<p>There are <a href="https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software">plenty</a> of CI/CD platforms; some of the more commonly used include <a href="https://en.wikipedia.org/wiki/Jenkins_(software)">Jenkins</a>, <a href="https://about.gitlab.com/product/continuous-integration/">GitLab</a>, <a href="https://en.wikipedia.org/wiki/Bamboo_(software)">Bamboo</a>, and <a href="https://en.wikipedia.org/wiki/TeamCity">TeamCity</a>.</p>
+<h2 id="infrastructure-automation">Infrastructure Automation</h2>
+<p>Traditionally, <em>provisioning</em> (setting up and configuring) servers and applications was a manual process, handled by sysadmins.
+Servers can be finicky, and making sure that they&rsquo;re up to date and correctly configured, have the right versions of the right tools installed, are properly secured, etc. is hard work.
+This combination of fiddly servers and manual labor had a tendency cause servers' configurations to diverge and become progressively more complex to manage over time.</p>
+<p>As the server infrastructure required to run services grew, companies began to employ <a href="https://en.wikipedia.org/wiki/Software_configuration_management">configuration management</a> tools to automate the process of configuring servers and other infrastructure.
+These tools enable users to instead configure their infrastructure by writing and running code, brings a host of benefits such as source control, code review, etc. — an approach known as <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code"><em>infrastructure as code</em></a>.
+Popular such tools include <a href="https://en.wikipedia.org/wiki/Terraform_(software)">Terraform</a> <a href="https://en.wikipedia.org/wiki/Ansible_(software)">Ansible</a>, <a href="https://en.wikipedia.org/wiki/Chef_(software)">Chef</a>, and <a href="https://en.wikipedia.org/wiki/Puppet_(company)#Puppet">Puppet</a>.</p>
+<h2 id="deployment-environments">Deployment Environments</h2>
+<p>A <a href="https://en.wikipedia.org/wiki/Deployment_environment">deployment environment</a> is a system or cluster to which an application is deployed.</p>
+<p>Software products are made to run in multiple distinct environments, typically including the following:</p>
+<ul>
+<li>The <a href="https://en.wikipedia.org/wiki/Deployment_environment#Development"><em>development</em> (or <em>dev</em>) environment</a>: the environment developers use (to run, test, debug, etc.) when developing the product. Typically runs on developers' computers, but may also run on remote servers (or VM instances) provided to developers. Ideally this environment is optimized for quick feedback and short developer iteration cycles.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Deployment_environment#Testing"><em>CI</em> environment</a>: the environment where CI pipelines are run. Typically provided by/managed via the CI platform. Ideally optimized for consistency, in order to reduce flakiness in tests.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Deployment_environment#Production"><em>production</em> environment</a>: the environment that end users of the product interact with. Typically uses significantly more server resources than the other environments. Companies often use multiple production environments distributed across different data centers or cloud regions. Ideally optimized for scaling and reliability.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Deployment_environment#Staging"><em>staging</em> environment</a>: the environment used to verify changes bound for production. Ideally as similar to the production environment as possible.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Disaster_recovery"><em>disaster recovery</em> (DR) environment</a>: the fallback environment used in place of the production environment when it breaks (which is hopefully never). Ideally identical to the production environment, but running in a different data center, and able to scale up quickly when required to.</li>
+</ul>
+<p>Ideally the application should run as similarly as possible across all of these environments.
+This has traditionally been hard to accomplish (especially for dev environments), but technologies like Docker and Kubernetes (which we discuss below) are bridging the gap.</p>
+<h2 id="monitoring-and-logging">Monitoring and Logging</h2>
+<p>Making sure that applications are actually running as intended in production is an important task, and is often accomplished using log storage and search services like <a href="https://en.wikipedia.org/wiki/Splunk">Splunk</a> or <a href="https://en.wikipedia.org/wiki/Elasticsearch">Elasticsearch</a>/<a href="https://en.wikipedia.org/wiki/Logstash">Logstash</a>/<a href="https://en.wikipedia.org/wiki/Kibana">Kibana</a> (these three when used together are known as the &lsquo;ELK stack&rsquo;) and monitoring/alerting services like <a href="https://en.wikipedia.org/wiki/Datadog">Datadog</a>, <a href="https://en.wikipedia.org/wiki/PagerDuty">PagerDuty</a> or <a href="https://en.wikipedia.org/wiki/Prometheus_(software)">Prometheus</a>.</p>
+<h2 id="containers-and-orchestration">Containers and Orchestration</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="docker">Docker</h3>
+<p><a href="https://en.wikipedia.org/wiki/Docker_(software)">Docker</a> is by far the most widely used container technology.
+As such, it&rsquo;s important to be familiar with, especially to people in an engineering role.</p>
+<p>Docker is basically a tightly integrated suite of different tools related to containers; it is a format for container images, a toolset for building, storing, and sharing said images, a container runtime, and a CLI for managing all of the above.
+This is helpful to people getting started with containers, since it means that they can focus on learning a single tool instead of a whole ecosystem.</p>
+<p>Getting started with Docker is pretty straightforward, and there are lots of great introductory materials.
+If you&rsquo;re new to containers, we recommend that you start out by working through some of the introductory material linked below.
+Like any technology, it&rsquo;s best to learn by doing, so make sure to install Docker on your own machine and play around with it a bit.
+Once you&rsquo;re familiar with the basics, you can move on to the material below to get a better idea of how to work efficiently with Docker.</p>
+<p>Docker revolves around building <em>images</em> and running <em>containers</em> based on these images.
+An <em>image</em> is basically a packaged snapshot of a virtual filesystem.
+Images are built incrementally in layers (snapshots of the virtual filesystem), and Docker saves storage space by re-using layers that are shared between multiple images.
+An image is basically just as a list of layers stored together with some metadata in a JSON file.
+Images can be referenced by their ID (which is just a hash of its contents), or via <em>tags</em>, which are aliases for images on the form <code>my-image</code>, <code>my-image:my-version</code>, or <code>my-repository/my-image:my-version</code>.</p>
+<p>A <em>container</em> is an instance of an image, running isolated from the host using various isolation mechanisms present in the Linux kernel (like <a href="https://en.wikipedia.org/wiki/Cgroups">cgroups</a> and <a href="https://en.wikipedia.org/wiki/Linux_namespaces">namespaces</a>).
+Containers normally run a single process, and are given a configuration when they&rsquo;re started, specifying which image to use, which process to run, whether any ports should be forwarded from the container to the host (to enable network communication with the process running in the container), whether any files or directories should be mounted from the container to the host, environment variables, etc.
+Containers are identified by their ID (a randomly generated number) or a name provided when the container is crated (if none is specified, Docker automatically generates a name).</p>
+<p>Docker also sets up a virtual networks for inter-container communication.
+By default, all containers belong to the default network (called <code>bridge</code>) but users can also create and run containers in their own virtual networks.</p>
+<p>Docker images are shared via <em>registries</em> (Docker&rsquo;s name for repositories).
+The official registry is called <a href="https://hub.docker.com/">Docker Hub</a>.
+By default, Docker will attempt to pull any images that aren&rsquo;t already present locally from Docker Hub.</p>
+<p>Users normally interact with Docker via its CLI.
+The CLI, in turn, interact with the Docker daemon (which is what actually manages images, containers, and networks) via a Unix socket (at <code>/var/run/docker.sock</code>).
+Communication with the Docker daemon happens via an HTTP API, so (try it yourself via e.g. <code>curl -s --unix-socket /var/run/docker.sock http://docker/containers/json | jq</code>).</p>
+<p>While it is possible to build Docker images manually by running a container, modifying the filesystem, and then saving it, it&rsquo;s far more common for images to be defined via <a href="https://docs.docker.com/engine/reference/builder/"><em>Dockerfiles</em></a>.
+A Dockerfile is essentially just a series of directives, each of which alter either the filesystem or the image metadata (e.g. which command to run or which environment variables to set).
+When an image is built from a Dockerfile, these directives are run by Docker inside a dedicated <em>build container</em> one by one, each leading to a new layer (and finally getting bundled as an image and tagged).
+Docker caches which images it has already run (together with hashes of the relevant parts of the build context), so it won&rsquo;t re-build layers that it&rsquo;s already built before.</p>
+<p>Builds always have a <em>build context</em> — the set of files that can be copied into the image during the build.
+The build context is by the default the entire directory where the build is performed, but files or directories can be excluded from the context using a file called <a href="https://docs.docker.com/engine/reference/builder/#dockerignore-file">.dockerignore</a>.</p>
+<p>Docker supports a bunch of different Dockerfile directives, including the following:</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/builder/#from"><code>FROM</code></a>: Specifies which image the Dockerfile should be based on. Required, and must appear as the first directive.</li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#env"><code>ENV</code></a>: Sets an environment variable.</li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#workdir"><code>WORKDIR</code></a>: Sets the working directory for the (the directory in which subsequent commands are executed).</li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#run"><code>RUN</code></a>: Runs a shell command in the build container.</li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#copy"><code>COPY</code></a>: Copies files from the build context into the container.</li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#add"><code>ADD</code></a>: Copies files from the build context <em>or from a remote URL</em> to the build container <em>and unpacks them if they&rsquo;re a zip or tar file</em>.</li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#user"><code>USER</code></a>: Sets the user (and optionally group) that runs subsequent commands.</li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#cmd"><code>CMD</code></a>: Sets the default command to run when the image is run. Comes in two forms: <code>RUN foo bar</code> and <code>RUN [&quot;foo&quot;, &quot;bar&quot;]</code> — prefer the latter, because the former will mess up signals sent to your container.</li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#entrypoint"><code>ENTRYPOINT</code></a>: Sets the image&rsquo;s <em>entrypoint</em> (a command that&rsquo;s run with the &lsquo;regular&rsquo; run command as argument(s)). Comes in two forms: <code>ENTRYPOINT foo</code> and <code>ENTRYPOINT [&quot;foo&quot;]</code> — use the latter, since Docker discards the run command instead of passing it to the entrypoint if you use the former.</li>
+</ul>
+<p>Docker is used via Docker has a bunch of commands, some more commonly used than others.
+Below are some of the more important ones:</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/commandline/build/"><code>docker build</code></a>: Builds an image from a Dockerfile. Examples: <code>docker build -t my-image .</code> (builds an image from the current directory and tags it as <code>my-image</code>), <code>docker build -f my-custom-dockerfile some-directory</code> (builds a docker image using a different directory and dockerfile).</li>
+<li><a href="https://docs.docker.com/engine/reference/run/"><code>docker run</code></a>: Creates and runs a container. Example: <code>docker run ubuntu echo 'hello world'</code> (runs a command in a container based on the <a href="https://hub.docker.com/_/ubuntu/"><code>ubuntu</code></a> image), <code>docker run --name my-container my-image</code> (runs the default command in a container named <code>my-container</code> based on the custom image <code>my-image</code>). Comes with plenty of options, including:
+<ul>
+<li><code>-d</code> or <code>--detach</code>: Runs the container in the background and prints its container ID (containers that are started in the foreground can be detached by pressing <code>Ctrl-p, Ctrl-q</code>).</li>
+<li><code>--entrypoint</code>: Overrides image&rsquo;s entrypoint.</li>
+<li><code>-e</code> or <code>--env</code>: Sets an environment variable in the container. Example: <code>docker run -e SOME_VAR=some-value SOME_OTHER_VAR=some-other-value my-image</code>.</li>
+<li><code>--env-file</code>: Sets multiple environment variables from a file.</li>
+<li><code>-h</code> or <code>--hostname</code>: Sets the hostname of the container in the virtual network.</li>
+<li><code>-i</code> or <code>--interactive</code>: Ensures stdin is kept open in the container (typically used together with <code>-t</code> to run interactive processes).</li>
+<li><code>--name</code>: Sets the container name.</li>
+<li><code>--network</code>: Runs the container on a specific virtual network.</li>
+<li><code>-p</code> or <code>--publish</code>: Binds a port on the host machine. Example: <code>docker run -p 80 my-image</code> (runs a container and binds port 80 in the container to a port on the host chosen by Docker), <code>docker run -p 8080:80 my-image</code> (runs a container and binds port 80 in the container to port 8080 on the host).</li>
+<li><code>--rm</code>: Ensures the container is deleted when it has run.</li>
+<li><code>-t</code> or <code>--tty</code>: Sets up a TTY in the container (typically used together with <code>-i</code> to run interactive processes).</li>
+<li><code>-v</code> or <code>--volume</code>: Mounts a volume (a directory or file) into the container. Examples: <code>docker run -v /path/on/host/filesystem:/path/in/container my-image</code> (mounts a file or directory from the local filesystem), <code>docker run -v volume-name:/path/in/container my-image</code> (mounts a <em>named volume</em>, created through <code>docker volume create</code>).</li>
+<li><code>-w</code> or <code>--workdir</code>: Sets the working directory inside the container.</li>
+</ul>
+</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/attach/"><code>docker attach</code></a>: attaches to the foreground process in a running container. Normally used to interact with the process in containers run with the <code>-i</code> and <code>-t</code> flags (detach by pressing <code>Ctrl-p, Ctrl-q</code>).</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/exec/"><code>docker exec</code></a>: runs a command inside a running container. Examples: <code>docker run my-container ps aux</code> (prints all running processes in <code>my-container</code>), <code>docker run -it my-container bash</code> (runs an interactive shell in the container).</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/image/"><code>docker image</code></a>: used to manage images. Has several subcommands, including:
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/commandline/image_ls/"><code>docker image ls</code></a>: lists images present on the machine.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/image_inspect/"><code>docker image inspect</code></a>: prints detailed information about an image.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/image_pull/"><code>docker image pull</code></a>: pulls an image from a repository (this is done transparently by <code>docker run</code> if it can&rsquo;t find the image).</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/image_push/"><code>docker image push</code></a>: pushes an image to a repository.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/image_rm/"><code>docker image rm</code></a>: removes an image.</li>
+</ul>
+</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/inspect/"><code>docker inspect</code></a>: prints detailed information about a container.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/kill/"><code>docker kill</code></a>: kills a container.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/logs/"><code>docker logs</code></a>: prints stdout/stderr logs for a container. Examples: <code>docker logs my-container</code> (prints all logs for the container), <code>docker logs --follow --tail 10 my-container</code> (prints <code>my-container</code>&rsquo;s last 10 lines of output, and attaches so that future output is printed as well).</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/ps/"><code>docker ps</code></a>: prints a table of all running containers.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/stats/"><code>docker stats</code></a>: continuously displays resource usage by all running containers.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/volume/"><code>docker volume</code></a>: used to manage named volumes. Has several subcommands, including:
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/commandline/volume_create/"><code>docker volume create</code></a>: creates a new volume.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/volume_inspect/"><code>docker volume inspect</code></a>: prints detailed information about a volume.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/volume_ls/"><code>docker volume ls</code></a>: lists all volumes.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/volume_rm/"><code>docker volume rm</code></a>: removes a volume.</li>
+</ul>
+</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/rm/"><code>docker rm</code></a>: removes a container. Run with <code>-f</code> to also kill the container if it&rsquo;s running.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/system_prune/"><code>docker system prune</code></a>: removes unused images, containers, and volumes — useful to run every once in a while to reclaim disk space.</li>
+</ul>
+<p>It should be noted that since Docker is built on features in the Linux kernel, it requires a Linux machine to run.
+There are official installations of Docker for Windows and Mac, but these actually run Docker using a hypervisor, and thus have worse performance than Docker on Linux (especially for tasks that involve a lot of filesystem operations, like compilation in certain languages).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Introductory resources:</p>
+<ul>
+<li><a href="https://www.katacoda.com/courses/docker">Katacoda: Docker</a> – interactive Docker tutorials.</li>
+</ul>
+<h3 id="kubernetes">Kubernetes</h3>
+<p>These days, containers are commonly used to run most or all processes, tasks, and services required to power an application (or even organization).
+For large applications, this can mean running thousands to millions of containers.
+While it&rsquo;s certainly possible to run this many containers using the Docker CLI on regular VM instances in a cloud, it&rsquo;s <em>hard work</em> — especially if one wants to do stuff like container <a href="https://en.wikipedia.org/wiki/Autoscaling">autoscaling</a>, automated deployments, fine-grained access/firewall rules, etc.</p>
+<p>To ease this pain, various organizations have come up with container <a href="https://en.wikipedia.org/wiki/Orchestration_(computing)">orchestration</a> systems.
+These handle the practical details of deploying, scaling, and operating contains across clusters of hosts, and provide the user with a convenient API for managing it all.</p>
+<p><a href="https://en.wikipedia.org/wiki/Kubernetes"><em>Kubernetes</em></a> (often called <em>k8s</em>) is the dominant such tool.
+It&rsquo;s pretty complex, and mastering it can be a pretty daunting task.
+As with most of the other tools discussed in this guide, however, picking up the basics is pretty straightforward.
+As usual, we summarize the Kubernetes-related information we think is important to know below, and if you&rsquo;re new to Kubernetes, we recommend that you check out some of the introductory materials linked at the bottom of this section before moving on.</p>
+<p>Kubernetes runs in a cluster configuration, with one or more <em>nodes</em> (hosts responsible for running your containers) managed by one or more <em>masters</em> (hosts responsible for managing nodes and providing the Kubernetes API).
+The nodes and masters run <a href="https://kubernetes.io/docs/concepts/overview/components">various processes</a> that power the cluster.</p>
+<p>Most/all interaction with Kubernetes happens through the API, and revolves around creating and managing <em>objects</em>, which are instances of some <em>resource type</em>.
+The following resource types are good to be aware of:</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/">Pod</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#pod-v1-core">API docs</a>): A Pod is one or more containers that are co-located (run on the same host) and co-scheduled (run at the same time). Containers in a pod share the same IP, ports, etc. Pods are usually created indirectly via a ReplicaSet, Job or similar rather than directly.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/">ReplicaSet</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#replicaset-v1-apps">API docs</a>): A ReplicaSet control how many copies (replicas) of a given pod should run. Normally the ReplicaSet includes a Pod &lsquo;template&rsquo;, used to define the associated pod. ReplicaSets are usually created indirectly via a Deployment rather than directly.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployment</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#deployment-v1-apps">API docs</a>): A Deployment is responsible for handling rolling out and upgrading ReplicaSets. Normally Deployments include a ReplicaSet template (and transitively, a Pod template as well). You&rsquo;ll normally run stateless services as Deployments. Deployments are associated with pods via <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/">labels and selectors</a>.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">Job</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#job-v1-batch">API docs</a>): A Job runs one or more pods one or more times, and makes sure that they complete successfully. Appropriate for one-off tasks, but not for running services.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/">CronJob</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#cronjob-v1beta1-batch">API docs</a>): A CronJob will spawn Jobs according to a template and a schedule.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/">StatefulSet</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#statefulset-v1-apps">API docs</a>): A StatefulSet is basically a Development, with the key difference that it persists pod &lsquo;identities&rsquo; (including storage) across restarts. StatefulSets should be used for apps that require persistent storage.</li>
+<li><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespace</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#namespace-v1-core">API docs</a>): Namespaces are the means by which Kubernetes segregates resources. Three Namespaces are created by default: <code>kube-system</code> (for objects associated with the Kubernetes system), <code>default</code> (for all user-created objects), and <code>kube-public</code> (not important), and users can add more if they feel like it (e.g. if they want to segregate users).</li>
+<li><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/">ConfigMap</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#configmap-v1-core">API docs</a>): A ConfigMap is key-value blob of data, that can be referred to in Pod/Deployment/Job/etc. specifications (to e.g. populate environment variables or files for containers). Typically used for configuration files or values shared between multiple pods.</li>
+<li><a href="https://kubernetes.io/docs/concepts/configuration/secret/">Secret</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#secret-v1-core">API docs</a>): A Secret is essentially the same thing as a ConfigMap, <em>but</em> it&rsquo;s stored encrypted at rest (and its values are base64-encoded, so secrets can more easily store binary data).</li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#service-v1-core">API docs</a>): A Service is basically an alias for one or more processes running in a pod, by which other pods can reach said processes. Kubernetes creates a DNS name for the Service, and handles load balancing for the corresponding pods. Services are associated with pods via <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/">labels and selectors</a>.</li>
+<li><a href="https://kubernetes.io/docs/concepts/architecture/nodes/">Node</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#node-v1-core">API docs</a>): a Node is a reference to a Kubernetes worker node. Nodes are typically registered automatically, so users mostly interact with Nodes for diagnostic purposes.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">DaemonSet</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#daemonset-v1-apps">API docs</a>): A DaemonSet schedules a single instance of a pod to all (or some) nodes. Used mostly for utilities like logging or metrics daemons.</li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#ingress-v1beta1-networking-k8s-io">API docs</a>): An Ingress tells Kubernetes that it should expose a Service to the outside world. How this happens depends on how the cluster is configured (and specifically, which <a href="https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/">IngressController</a> is used).</li>
+<li><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">PersistentVolume</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#persistentvolume-v1-core">API docs</a>): A PersistentVolume is a reference to external storage where Pods can store data. How the volume works depends on how the cluster is configured (and specifically, which <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">StorageClass</a> is used).</li>
+<li><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims">PersistentVolumeClaim</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#persistentvolumeclaim-v1-core">API docs</a>): A PersistentVolumeClaim is a chunk of a PersistentVolume that&rsquo;s been reserved for use with some Pod.</li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">NetworkPolicy</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#networkpolicy-v1-networking-k8s-io">API docs</a>): A NetworkPolicy is a list of access rules that define how pods can communicate with each other.</li>
+</ul>
+<p>Kubernetes provides a mechanism for controlling authorization via <a href="https://en.wikipedia.org/wiki/Role-based_access_control">role-based access control (RBAC)</a>.
+Not all setups make use of this system, but for those that do, the following resources are important:</p>
+<ul>
+<li>User and Group: A User is an account associated with a specific end-user, and a Group is a collection of Users. These objects are managed by cluster administrators rather than through the API.</li>
+<li><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">ServiceAccount</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#serviceaccount-v1-core">API docs</a>): A ServiceAccount is an account associated with one or more pods.</li>
+<li><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole">Role</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#role-v1-rbac-authorization-k8s-io">API docs</a>) and <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole">ClusterRole</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#clusterrole-v1-rbac-authorization-k8s-io">API docs</a>): A Role/ClusterRole is essentially a list of permissions to access some object or objects. Roles always apply within a specific namespace, whereas ClusterRoles are &lsquo;global&rsquo; (so they can apply to non-namespaced objects like Nodes).</li>
+<li><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding">RoleBinding</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#rolebinding-v1-rbac-authorization-k8s-io">API docs</a>) and <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-and-clusterrolebinding">ClusterRoleBinding</a> (<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.17/#clusterrolebinding-v1-rbac-authorization-k8s-io">API docs</a>): A RoleBinding/ClusterRoleBinding specifies that a Role should apply to one or more <em>subjects</em> (Users, Groups, or ServiceAccounts).</li>
+</ul>
+<p>Users normally interact with Kubernetes via the official CLI, called <a href="https://kubernetes.io/docs/reference/kubectl/overview/">kubectl</a>.
+Knowing how to use kubectl is vital for anyone who wants to do any serious work with Kubernetes.
+The following kubectl commands are important to know about:</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get"><code>kubectl get</code></a>: Lists objects. Examples: <code>kubectl get pods</code> (lists all Pods in the default namespace), <code>kubectl get configmaps,secrets</code> (lists all ConfigMaps and Secrets), <code>kubectl get -o yaml svc/my-service</code> (prints the API object for the Service <code>my-service</code> as YAML).</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe"><code>kubectl describe</code></a>: Prints detailed information about an one or more objects. Examples: <code>kubectl describe pod/my-pod</code> (describes the specified Pod), <code>kubectl describe nodes</code> (describes all Nodes).</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply"><code>kubectl apply</code></a>: &lsquo;Applies&rsquo; a <em>manifest</em> — a set of objects defined in a file — creates the objects if they don&rsquo;t exist, and modifies them to match the manifest if they do. Example: <code>kubectl apply -f my-file</code>.</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#diff"><code>kubectl diff</code></a>: Like <code>kubectl apply</code>, but prints what changes would be applied instead of applying them. Use before <code>kubectl apply</code> to verify that the intended changes would be made.</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#edit"><code>kubectl edit</code></a>: Edits one or more resources. Example: <code>kubectl edit deployment my-deployment</code> (opens the specified Deployment in your default editor — applies any changes you&rsquo;ve made when you exit the editor).</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete"><code>kubectl delete</code></a>: Deletes a resource. Example: <code>kubectl delete service my-service</code> (deletes the specified Service).</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs"><code>kubectl logs</code></a>: Prints logs (stdout and stderr) for a container — analogous to <code>docker logs</code>. Examples: <code>kubectl logs my-pod</code> (prints all logs for the default container in <code>my-pod</code>), <code>kubectl logs --follow --tail=20 my-pod -c my-container</code> (prints the last 10 lines of output for the provided container, and attaches so that future output is printed as well).</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#attach"><code>kubectl attach</code></a>: Attaches to the foreground process running in a container — analogous to <code>docker attach</code>. Examples: <code>kubectl attach -it my-pod</code> (attaches to the default container in <code>my-pod</code> for interactive use), <code>kubectl attach -it my-pod -c my-container</code> (attaches to the provided container for interactive use).</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#exec"><code>kubectl exec</code></a>: runs a command in a container — analogous to <code>docker exec</code>. Examples: <code>kubctl exec my-pod ps aux</code> (runs a non-interactive command), <code>kubectl exec -it my-pod -c my-container bash</code> (runs an interactive shell in the specified container).</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward"><code>kubectl port-forward</code></a>: forwards a port from a pod, service, or deployment to a local port. Example: <code>kubectl port-forward pod/my-pod 8888:5000</code> (binds the local port 8888 to port 5000 in the specified Pod).</li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#completion"><code>kubectl completion</code></a>: enables autocompletion for your shell. Example: <code>source &lt;(kubectl completion zsh)</code> (sets up autocompletion for zsh).</li>
+</ul>
+<p>To authenticate with a cluster, users need a <em>kubeconfig</em> file (a configuration file that tells kubectl how to connect to a cluster).
+The default location for this file is <code>~/.kube/config</code>, but an alternative path can be provided to kubectl via the <code>KUBECONFIG</code> environment variable or the <code>--kubeconfig</code> flag.
+Multiple ways of connecting to clusters can be managed through the same kubeconfig file through a mechanism called <a href="https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#define-clusters-users-and-contexts"><em>contexts</em></a>.</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://www.katacoda.com/courses/kubernetes">Katacoda: Kubernetes</a> – interactive Kubernetes tutorials and playground.</li>
+<li><a href="https://kubernetes.io/docs/concepts/">The Kubernetes Concepts Docs</a> — guide to Kubernetes concepts; useful for building a deep understanding of Kubernetes.</li>
+<li><a href="https://kubernetes.io/docs/reference/">The Kubernetes Reference Docs</a> — detailed documentation for the Kubernetes API; useful for finding out exactly how things work, which options are supported, etc.</li>
+<li><a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">kubectl Cheat Sheet</a> — cheat sheet for kubectl.</li>
+</ul>
+<p>Utilities and tools:</p>
+<ul>
+<li><a href="https://github.com/derailed/k9s">k9s</a> — graphical CLI for managing Kubernetes clusters. Use as a complement to kubectl when running routine tasks.</li>
+<li><a href="https://github.com/kubernetes-sigs/kustomize">Kustomize</a> — tool for templating Kubernetes manifests — integrated with kubectl.</li>
+<li><a href="https://helm.sh/">Helm</a> — another tool for templating Kubernetes manifests.</li>
+<li><a href="https://github.com/kubernetes-sigs/krew">Krew</a> — a plug-in manager for kubectl. See <a href="https://github.com/kubernetes-sigs/krew-index/blob/master/plugins.md">here</a> for a list of supported plug-ins.</li>
+</ul>
+<h3 id="cloud-container-platforms">Cloud Container Platforms</h3>
+<p>There are also cloud platforms for running and orchestrating containers, such as Amazon&rsquo;s <a href="https://aws.amazon.com/ecs/">Elastic Container Service (ECS)</a>.
+These are generally more stream-lined than Kubernetes, at the expense of portability (for instance, they can&rsquo;t be run in a development environment) and configurability (they&rsquo;re not as powerful or extensible as Docker).</p>
+<h2 id="serverless">Serverless</h2>
+<p>Another newer trend is to do away with servers and containers (and almost everything else) completely, and simply write software as a collection of small services/components that are completely managed by a cloud platform.
+This approach is called <a href="https://en.wikipedia.org/wiki/Serverless_computing">serverless computing</a>, and offers the potential of simply doing away with almost all ops-related work (or rather, outsourcing it to a cloud provider).</p>
+<p>Examples of serverless platforms include <a href="https://en.wikipedia.org/wiki/AWS_Lambda">AWS Lambda</a> and <a href="https://cloud.google.com/serverless-options/">Google Cloud Functions/App Engine/Cloud Run</a>.
+There are also frameworks geared towards developing serverless services such as <a href="https://en.wikipedia.org/wiki/Serverless_Framework">Serverless Framework</a>.</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>

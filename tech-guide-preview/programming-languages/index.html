@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Programming Languages - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Programming Languages</h1>
+<div class="content ">
+  <p><a href="https://en.wikipedia.org/wiki/Programming_language">Programming languages</a> are <a href="https://en.wikipedia.org/wiki/Formal_language">formal languages</a> used to write programs.</p>
+<!-- raw HTML omitted -->
+<p>The concepts presented in this section can be useful for everyone, but knowing the details is essential mostly to people in engineering roles.</p>
+<p>This section consists of two parts.
+In the first part, we discuss various programming language concepts.
+In the second part, we discuss the languages that we use; what they are, and how to learn to use them effectively.</p>
+<h2 id="concepts">Concepts</h2>
+<p>Computers execute <a href="https://en.wikipedia.org/wiki/Machine_code"><em>machine code</em></a> — a series of instructions written in a compact, binary format to be run on a specific processor architecture.
+Since writing machine code by hand is an extremely tedious and error-prone process, programmers (almost) always write code in a <em>higher-level</em> language — one that can be read and written by humans (as collections of text files, called <a href="https://en.wikipedia.org/wiki/Source_code"><em>source code</em></a>).
+This code is then <em>compiled</em> (rewritten) to machine code by a program called a <a href="https://en.wikipedia.org/wiki/Compiler"><em>compiler</em></a>.</p>
+<h3 id="interpreted-languages">Interpreted Languages</h3>
+<p>Some languages aren&rsquo;t compiled directly to machine code — rather, they&rsquo;re <a href="https://en.wikipedia.org/wiki/Interpreted_language"><em>interpreted</em></a> (read and executed on the fly) by a program called an <em>interpreter</em> (sometimes the code is compiled to an <a href="https://en.wikipedia.org/wiki/Intermediate_representation"><em>intermediate representation</em></a> before being interpreted — e.g. in Java).
+This enables platform independence (code written in compiled languages have to be compiled once for each target platform, but in interpreted languages the interpreter handles any platform-specific details) and makes various language features easier to implement (e.g. dynamic typing — see below).
+Notable examples of interpreted languages include Java, Python, and JavaScript.</p>
+<p>Interpreted languages are sometimes loosely referred to as <a href="https://en.wikipedia.org/wiki/Scripting_language"><em>scripting languages</em></a>, especially when they&rsquo;re used to create <em>scripts</em> (small programs that automate some task, usually contained within a single source code file).</p>
+<h3 id="syntax-semantics-and-compilation">Syntax, Semantics and Compilation</h3>
+<p>Programming languages (like regular <a href="https://en.wikipedia.org/wiki/Natural_language">natural languages</a>) have grammars — rules that specify what is considered valid code (or a valid sentence), and rules that specify what the meaning any given piece of code (or sentence) is.
+The rules that define what is considered valid code in a language is called a language&rsquo;s <a href="https://en.wikipedia.org/wiki/Syntax_%28programming_languages%29"><em>syntax</em></a>, while the rules that specify what the code means are called its <a href="https://en.wikipedia.org/wiki/Semantics_%28computer_science%29"><em>semantics</em></a>.</p>
+<p>Compilers typically work in multiple stages.
+The first step is called <a href="https://en.wikipedia.org/wiki/Parsing#Computer_languages"><em>parsing</em></a>.
+This is the process of reading source code, validating that it adheres to the language&rsquo;s syntax, and mapping it to a data structure called an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">abstract syntax tree (AST)</a>.
+The compiler analyzes the AST to verify that the code is free of semantic problems, performs <a href="https://en.wikipedia.org/wiki/Optimizing_compiler"><em>optimization</em></a> (making the program faster without changing its semantics), and finally outputs machine code for the target platform as an <a href="https://en.wikipedia.org/wiki/Executable">executable program</a>.</p>
+<p>Interpreters typically perform all the above steps just like compilers, but they execute the code on the fly instead of outputting it as an executable.
+Some compilers <a href="https://en.wikipedia.org/wiki/Source-to-source_compiler">output code in another language</a>) instead of machine code.</p>
+<h3 id="low-level-and-high-level-languages">Low-level and High-level Languages</h3>
+<p>Programming languages are often organized from <a href="https://en.wikipedia.org/wiki/Low-level_programming_language"><em>low-level</em></a> (more like machine code) to <a href="https://en.wikipedia.org/wiki/High-level_programming_language"><em>high-level</em></a> (more abstract and expressive).</p>
+<p>Low-level languages are used when working &lsquo;close to the hardware&rsquo;, and where performance is very important (e.g. in <a href="https://en.wikipedia.org/wiki/Embedded_system">embedded systems</a>, <a href="https://en.wikipedia.org/wiki/Computer_graphics_(computer_science)">graphics programming</a>, or <a href="https://en.wikipedia.org/wiki/Computer_simulation">simulations</a>).
+The &lsquo;lowest-level&rsquo; family of languages in practical use is called <a href="https://en.wikipedia.org/wiki/Assembly_language"><em>assembly languages</em></a> — these are essentially just textual representations of machine code — i.e. a sequence of instructions geared towards some specific instruction set.
+Other popular low-level languages include <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> and <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)">Rust</a>.</p>
+<p>Low-level programming typically involves manually <a href="https://en.wikipedia.org/wiki/C_dynamic_memory_allocation">allocating/freeing</a> and manipulating memory (using <a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointers</a>).
+Writing such code is a somewhat tedious and error-prone process, which tends to lead to hard-to-detect security and stability problems (like <a href="https://en.wikipedia.org/wiki/Buffer_overflow">buffer overflows</a>, <a href="https://en.wikipedia.org/wiki/Dangling_pointer">dangling pointers</a>/<a href="https://en.wikipedia.org/wiki/Segmentation_fault">segmentation faults</a>, and <a href="https://en.wikipedia.org/wiki/Memory_leak">memory leaks</a>).</p>
+<p>High-level languages are preferred in applications where developer productivity is more important than performance (which includes the vast majority of web apps).
+We mostly use the high-level languages Python and Clojure (which are both interpreted).</p>
+<p>Memory in high-level (and especially dynamically typed) languages is usually <a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">garbage-collected</a>.
+This means that the interpreter handles memory management so that the programmer doesn&rsquo;t have to worry about it.
+Almost all web development happens in garbage-collected languages.</p>
+<p>As an illustration of high- vs low-level programming, consider the example of reversing a string <a href="https://rosettacode.org/wiki/Reverse_a_string#C">in C</a> and <a href="https://rosettacode.org/wiki/Reverse_a_string#Clojure">in Clojure</a>.</p>
+<h3 id="types-and-type-systems">Types and Type Systems</h3>
+<p>Most/all programs revolve around repeatedly performing computations involving various values to produce other values.
+To help structure and reason about these computations, it&rsquo;s very useful to distinguish categorize values according to what data they contain and what operations can be performed on them.</p>
+<p>Programming languages handle this by organizing values into <em>types</em>.
+The set of rules that govern which types are permitted and how types interact is called a <a href="https://en.wikipedia.org/wiki/Type_system"><em>type system</em></a> — every language has one of these.
+The type system&rsquo;s rules are enforced by the compiler or interpreter.
+If this happens at <em>compile-time</em> (during compilation) it&rsquo;s called <a href="https://en.wikipedia.org/wiki/Type_system#Static_type_checking"><em>static typing</em></a>, and when it happens at <em>run-time</em> (when the program is being executed) it&rsquo;s called <a href="https://en.wikipedia.org/wiki/Type_system#Dynamic_type_checking_and_runtime_type_information"><em>dynamic typing</em></a>.</p>
+<p>Type systems also vary in how strict they are.
+Some languages (like C and JavaScript) allow types to be somewhat arbitrarily treated as other types — this is called <a href="https://en.wikipedia.org/wiki/Strong_and_weak_typing"><em>weak typing</em></a> and is generally considered a bad thing.
+A type system that is not weak is called <em>strong</em>.</p>
+<h3 id="state-and-functional-vs-imperative-languages">State and Functional vs Imperative Languages</h3>
+<p>Apart from <em>computing things</em>, programs also need to <em>keep track of things</em>.
+The set of information kept track of by a program or other system is called its <a href="https://en.wikipedia.org/wiki/State_(computer_science)"><em>state</em></a>.
+The process of modifying state is called <em>mutation</em>; values that can be mutated are called <em>mutable</em> and values that can&rsquo;t be mutated are called <a href="https://en.wikipedia.org/wiki/Immutable_object"><em>immutable</em></a>.
+Programming languages differ greatly in how they deal with state and mutation.</p>
+<p>Most software is written using languages that take an <a href="https://en.wikipedia.org/wiki/Imperative_programming"><em>imperative</em></a> approach to state.
+In imperative languages, programs consist of sequences of <a href="https://en.wikipedia.org/wiki/Statement_(computer_science)">statements</a>, most of which typically modify the state referred to to by some <a href="https://en.wikipedia.org/wiki/Variable_(computer_science)">variable</a> (such as <code>foo += 10</code> or <code>bar[x] = bar[x + 1] + bar[x + 2]</code>).
+Typically, most values in imperative languages are mutable, although some imperative languages (like C or Java) permit marking some variables (typically called <em>constants</em>) as immutable.</p>
+<p>One popular class of imperative languages is <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented (OO)</a> languages.
+In these languages, variables typically don&rsquo;t refer directly to state, but to <em>objects</em>, which are a entities that hold one or more variables (typically called <a href="https://en.wikipedia.org/wiki/Field_(computer_science)"><em>fields</em></a> or <a href="https://en.wikipedia.org/wiki/Member_variable"><em>member variables</em></a>), as well as a set of actions (called <a href="https://en.wikipedia.org/wiki/Method_(computer_programming)"><em>methods</em></a>) that can be <em>called</em> to read or mutate these variables.
+In most OO languages (Java, C++, etc.), objects are instances of <a href="https://en.wikipedia.org/wiki/Class_(computer_programming)"><em>classes</em></a>, which are essentially custom types that specify a set of fields and methods.</p>
+<p><a href="https://en.wikipedia.org/wiki/Functional_programming">Functional languages</a> take a different approach to state.
+In these languages, all or almost all state is immutable, and the program state evolves by applying <em>functions</em> to existing values in order to produce new values.
+Languages in which <em>all</em> state is immutable are called <a href="https://en.wikipedia.org/wiki/Purely_functional_programming"><em>purely functional</em></a>.
+In these languages, all <a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)">side effects</a> (mutation, printing values, etc.) are captured by the type system and treated as data.</p>
+<p>Functional, imperative, and object-oriented programming are said to be different <a href="https://en.wikipedia.org/wiki/Programming_paradigm"><em>programming paradigms</em></a>.
+Imperative and functional programming can be viewed as different takes on what programs <em>are</em>: in the imperative approach, programs are treated as sequences that modify a set of values (or objects) until the desired state is achieved, whereas in the functional paradigm, programs are treated as a series of transformations which process data until the desired value is produced.
+Imperative programming is closer to how CPUs and memory work, so it can be more suitable for e.g. low-level programming.
+Functional programming — on the other hand — is more mathematical in its nature (there&rsquo;s no mutation in mathematics), and as such can be easier to reason about, prove correct, parallelize, etc.</p>
+<p>Most modern languages support a mix of paradigms, and let the programmer choose whether to write code in an imperative or functional style.
+In practice, such languages tend to lose a lot of the benefits of functional languages, because they don&rsquo;t have <a href="https://en.wikipedia.org/wiki/Referential_transparency"><em>referential transparency</em></a> (essentially the property that function calls won&rsquo;t have unexpected side effects).</p>
+<h3 id="concurrency">Concurrency</h3>
+<p>Another important aspect of programming languages is how they deal with <a href="https://en.wikipedia.org/wiki/Concurrency_(computer_science)"><em>concurrency</em></a>.
+This is when multiple parts of a program run <em>concurrently</em> — i.e. either <em>in parallel</em> at the same time (e.g. as different <a href="https://en.wikipedia.org/wiki/Thread_(computing)">threads</a> scheduled to different <a href="https://en.wikipedia.org/wiki/Multi-core_processor">CPU cores</a>), or interleaved (e.g. as different threads taking turn to run on a single-cored CPU).</p>
+<p>Writing correct concurrent code when multiple threads of execution share mutable state is very hard, because operations from different threads can interfere with one another as well as happen in lots of different orders — these types of problems are called <a href="https://en.wikipedia.org/wiki/Race_condition"><em>race conditions</em></a>.
+Race conditions are traditionally avoided by means of synchronization mechanism (such as <a href="https://en.wikipedia.org/wiki/Lock_(computer_science)"><em>locks</em></a>), but these can in turn cause other problems (such as <a href="https://en.wikipedia.org/wiki/Deadlock">deadlock</a>).</p>
+<p>Modern languages tend to work around these problems by avoiding shared mutable state in favor of other methods of communication, such as:</p>
+<ul>
+<li>The <a href="https://en.wikipedia.org/wiki/Actor_model"><em>actor model</em></a>: threads can only communicate by sending messages <em>asynchronously</em> (i.e. messages can be written and read independently) to one another (used in <a href="https://en.wikipedia.org/wiki/Erlang_(programming_language)">Erlang</a> and <a href="https://en.wikipedia.org/wiki/Scala_(programming_language)">Scala</a>).</li>
+<li><a href="https://en.wikipedia.org/wiki/Coroutine"><em>Coroutines</em></a>: threads are lightweight and communicate asynchronously via queues called <a href="https://en.wikipedia.org/wiki/Channel_(programming)"><em>channels</em></a> (used in <a href="https://en.wikipedia.org/wiki/Go_(programming_language)">Go</a>).</li>
+<li><a href="https://en.wikipedia.org/wiki/Software_transactional_memory"><em>Software transactional memory</em></a>: threads <em>can</em> share mutable state, but the system ensures that operations appear atomic to other threads (used in Clojure).</li>
+</ul>
+<p>There&rsquo;s also <a href="https://en.wikipedia.org/wiki/Async/await">async/await</a>, which is a special syntax for cleanly running <em>asynchronous tasks</em> (lightweight, temporary threads of execution) that return results (used in modern JavaScript).</p>
+<p>As CPU frequencies have stagnated in recent years (and as the number of cores in a typical CPU have increased), concurrency support has become an increasingly important aspect of programming languages.
+As a result, modern languages tend to have a strong focus on concurrency.</p>
+<p>It should be noted that functional languages generally have a strong edge when it comes to concurrency (compared to imperative languages), because their focus on immutable data means that there&rsquo;s less potentially shared mutable state to worry about.</p>
+<!-- raw HTML omitted -->
+<h3 id="ffi-and-scripting-languages">FFI and Scripting Languages</h3>
+<p>It&rsquo;s fairly common occurrence for code written in one language to call code written in another, and most languages have one or more <a href="https://en.wikipedia.org/wiki/Foreign_function_interface">foreign function interfaces (FFIs)</a>, that facilitate this.
+Since OS and system APIs are typically written in <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>, FFIs targeting C are by far the most common (most languages have them).
+Some languages and also support <em>embedding</em> code written in other languages directly in the code (for instance, Assembly in C and C++).</p>
+<p>It&rsquo;s also common for languages to be embedded in applications or other systems.
+Examples include JavaScript in browsers (and some other applications), Visual Basic in Microsoft Excel, Bash in Unix, etc.
+These languages, when embedded in and used to control an application or other system, are called <a href="https://en.wikipedia.org/wiki/Scripting_language">Scripting Languages</a>.</p>
+<h3 id="package-managers">Package Managers</h3>
+<p>Most modern applications are heavily reliant on libraries — both open source and &lsquo;internal&rsquo; (i.e. shared within an organization).
+Manually downloading and including libraries in projects is a major pain — especially when said libraries need to be kept up to date, and have dependencies of their own — which is why all modern languages have a <a href="https://en.wikipedia.org/wiki/Package_manager#Application-level_package_managers"><em>package manager</em></a>.</p>
+<p>Package managers typically handle downloading and caching of dependencies, conflict resolution, building and publishing libraries, etc.
+Some languages have more mature tooling for packages than others, but regardless, it&rsquo;s important that you familiarize yourself with the package managers for the languages you develop in.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="noteworthy-programming-languages">Noteworthy Programming Languages</h2>
+<p>The following languages are in common use (or otherwise noteworthy):</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Assembly_language">Assembly Languages</a>: Family of languages — essentially machine code in text format. Sometimes embedded in other low-level languages for performance reasons.</li>
+<li><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>: The most common Unix shell and scripting language. Not well-suited for programming, but a necessary evil when working on the command line.</li>
+<li><a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>: Statically typed, imperative language used mostly for systems programming these days. Every operating system kernel and pretty much all standard Unix tools are written in C.</li>
+<li><a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a>: Statically typed, object-oriented, and garbage-collected. Essentially a more modern Java. Used mainly by Windows programmers.</li>
+<li><a href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a>: C, but object-oriented, and with a crazy amount of other features tacked on. Used to be very popular, but these days it&rsquo;s mostly used for game engines and other high-performance applications. Hard to do right, especially when working in teams.</li>
+<li><a href="https://en.wikipedia.org/wiki/Clojure">Clojure</a>: Dynamically typed, functional, and garbage-collected Lisp dialect with a focus on safe concurrency. Used mainly for backend and frontend development. A dialect of Lisp.</li>
+<li><a href="https://en.wikipedia.org/wiki/Go_(programming_language)">Go</a>: Statically typed, garbage-collected, compiled, object-oriented language, with a focus on safe concurrency. Similar to C.</li>
+<li><a href="https://en.wikipedia.org/wiki/Haskell_(programming_language)">Haskell</a>: Statically typed, purely functional language, with a powerful type system. More popular in academia than in industry, and a major inspiration for most modern languages.</li>
+<li><a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a>: Statically typed, object-oriented, garbage-collected language. Mainly used for enterprise applications.</li>
+<li><a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>: Dynamically typed, object oriented language. Although generally considered poorly designed (for one, it&rsquo;s weakly typed), it&rsquo;s widely used for both frontend and backend development, as well as a scripting language. JavaScript is the only language that runs in most browsers.</li>
+<li><a href="https://en.wikipedia.org/wiki/Julia_(programming_language)">Julia</a>: A modern, dynamically typed imperative language — essentially a more modern and faster Python. Mainly targets scientific applications. Basically a Lisp dialect, but with a more conventional syntax.</li>
+<li><a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>: Family of languages, usually dynamically typed, mostly functional (but often with some imperative features) languages. Notable for their extremely simple syntax (Lisps use a prefix notation and the code is written as a data structure). Pioneered many concepts that are ubiquitous today (dynamic typing, garbage collection, higher-order functions, etc.).</li>
+<li><a href="https://en.wikipedia.org/wiki/Lua_(programming_language)">Lua</a>: Simple, dynamically typed imperative language. Mainly used as a scripting language.</li>
+<li><a href="https://en.wikipedia.org/wiki/PHP">PHP</a>: Scripting language mostly used for legacy backend applications. Widely considered poorly designed.</li>
+<li><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a>: Dynamically typed, optionally object-oriented imperative language, with a focus on simplicity. Widely used for backend development, and a lingua franca for data science.</li>
+<li><a href="https://en.wikipedia.org/wiki/R_(programming_language)">R</a>: Dynamically typed, garbage-collected language with a focus on statistical and scientific applications (via built-in support for linear algebra, plotting, etc.). Basically a Lisp dialect, but with a more conventional syntax.</li>
+<li><a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a>: Dynamically typed, optionally object-oriented imperative language, with a focus on simplicity. Similar to Python. Mostly used for backend development.</li>
+<li><a href="https://en.wikipedia.org/wiki/Rust_(programming_language)">Rust</a>: Statically typed, modern alternative to C/C++, with a focus on safe memory management and concurrency. Its type system provides guarantees against common runtime errors encountered in other non-garbage-collected languages.</li>
+<li><a href="https://en.wikipedia.org/wiki/Scala_(programming_language)">Scala</a>: Statically typed, optionally functional language. Basically Java, but with Haskell glued on top. Runs on the Java Virtual Machine.</li>
+<li><a href="https://en.wikipedia.org/wiki/TypeScript">TypeScript</a>: JavaScript but with optional static typing. Widely considered a &lsquo;better JavaScript&rsquo;, it&rsquo;s gaining popularity for both backend and frontend development.</li>
+</ul>
+<h3 id="python">Python</h3>
+<p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> is a dynamically typed language.
+It is widely used as an introductory language, as well as for scripting, service development, etc. in most areas of technology.</p>
+<p>Learning Python is important and is likely a good investment of time for most people.
+We recommend that the reader select and work through an introductory text or course on Python.</p>
+<p>Anybody who plans to do any serious development with Python should also be aware of the following (these, and more, are detailed):</p>
+<ul>
+<li>The release of Python 3.0 <a href="https://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html">broke backwards compatibility</a> with previous versions, forcing people to rewrite their code to upgrade. Many packages and projects opted not to do this, which led to a bit of a split in the community for several years. As of 2020, Python 2 will no longer receive any updates. Any new project should use Python 3, and those working on Python 2 projects should use a tool like <a href="https://docs.python.org/2/library/2to3.html">2to3</a> to migrate their code to Python 3.</li>
+<li>Python packaging is somewhat messy, and there are multiple different formats and tools in use. The standard package manager is <a href="https://en.wikipedia.org/wiki/Pip_(package_manager)">pip</a>, and the standard package repository is <a href="https://pypi.org/">PyPi</a>. Pip doesn&rsquo;t natively support &lsquo;per-project&rsquo; dependencies (it installs everything globally) — to handle this people use tools like <a href="https://docs.python.org/3/library/venv.html">venv</a> and <a href="https://pipenv.kennethreitz.org/en/latest/">Pipenv</a>.</li>
+<li>Compared to many other languages, Python it is relatively slow and has poor support for concurrency (Python&rsquo;s has a <a href="https://en.wikipedia.org/wiki/Global_interpreter_lock">global interpreter lock (GIL)</a> and prevents more than one thread from executing at the same time). It is possible to speed up parts of the code by using Python&rsquo;s C FFI and tools like <a href="https://en.wikipedia.org/wiki/Cython">Cython</a>.</li>
+<li>Python has an official style guide called <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>. Python projects should follow this guide, and use a linter (like <a href="https://github.com/klen/pylama">Pylama</a>) to enforce it.</li>
+<li>Knowing how to use a REPL such as <a href="https://ipython.org/">iPython</a> well is important for productivity.</li>
+</ul>
+<p>Introductory resources:</p>
+<ul>
+<li><a href="https://www.codecademy.com/learn/learn-python">Codecademy: Learn Python</a> – interactive tutorial for Python 2. There&rsquo;s also a Python 3 version, but it&rsquo;s not free.</li>
+<li><a href="https://learnxinyminutes.com/docs/python3/">Learn X in Y minutes: Python 3</a> – no-nonsense walkthrough of the syntax and core language features.  Best practices:</li>
+<li><a href="https://docs.python-guide.org/">The Hitchhikers Guide to Python</a> — comprehensive guide to best practices in Python.</li>
+<li><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> — the official python style guide.</li>
+<li><a href="https://github.com/klen/pylama">Pylama</a> — pluggable linter.</li>
+</ul>
+<p>In-depth resources:</p>
+<ul>
+<li><a href="https://packaging.python.org/">Python Packaging User Guide</a> — official guide to the mess that is Python packaging.</li>
+</ul>
+<p>Libraries and tools:</p>
+<ul>
+<li><a href="https://pipenv.kennethreitz.org/en/latest/">Pipenv</a> — tool that aims to simplify handling per-project Python dependencies.</li>
+<li><a href="https://awesome-python.com/">Awesome Python</a> — a listing of high-quality Python tools and libraries.</li>
+<li><a href="https://ipython.org/">iPython</a> — great command-line REPL for Python.</li>
+<li><a href="https://jupyter.org/">Jupyter</a> — REPL focused on building &lsquo;notebooks&rsquo; that can contain images, graphs, etc. Supports many languages, but mostly used with Python.</li>
+<li><a href="https://pypi.org/project/ipdb/">ipdb</a> – interactive debugger that integrates with iPython. Replacement for Python&rsquo;s built in debugger <code>pdb</code>.</li>
+<li><a href="https://github.com/pdbpp/pdbpp">pdb++</a> – another <code>pdb</code> replacement.</li>
+</ul>
+<h3 id="bash">Bash</h3>
+<p><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a> is the de-facto standard when it comes to scripting in Unix.
+It is both a <a href="https://en.wikipedia.org/wiki/Unix_shell">shell</a> (the standard shell in most Unix distributions) and a programming language.</p>
+<blockquote>
+<p>Although most users think of the shell as an interactive command interpreter, it is really a programming language in which each statement runs a command. Because it must satisfy both the interactive and programming aspects of command execution, it is a strange language, shaped as much by history as by design.
+— Brian W. Kernighan &amp; Rob Pike
+TODO: ^</p>
+</blockquote>
+<p>While Bash isn&rsquo;t great as a programming language, it&rsquo;s still important to know it well because:</p>
+<ol>
+<li>Lots of tasks require working at the command line, and doing that well requires an understanding of Bash.</li>
+<li>In lots of situations, it&rsquo;s the best (or only) choice for scripting.</li>
+<li>You&rsquo;re bound to come across Bash scripts written by others fairly frequently.</li>
+</ol>
+<p>The best way to learn Bash is probably to spend a little time up-front getting familiar with the syntax and learning basic commands and constructs, and then to try to learn continuously as you work on the command line.</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://learnxinyminutes.com/docs/bash/">Learn X in Y minutes: Bash</a> – no-nonsense walkthrough of the syntax and core language features.</li>
+<li><a href="https://www.learnshell.org/">learnshell.org</a> – interactive Bash tutorial.</li>
+<li><a href="https://www.learnshell.org/">Bash Academy</a> – in-depth Bash tutorials (currently a work in progress).</li>
+</ul>
+<h3 id="clojure">Clojure</h3>
+<p><a href="https://en.wikipedia.org/wiki/Clojure">Clojure</a> is a dynamically typed functional language, belonging to the <a href="https://en.wikipedia.org/wiki/Lisp">Lisp</a> family of languages.</p>
+<p>Like all Lisps, its syntax is rather distinct, because it uses <a href="https://en.wikipedia.org/wiki/Polish_notation">prefix notation</a> rather than infix notation (e.g. <code>(+ 1 2 3)</code> instead of <code>1 + 2 + 3</code>), and the code is written directly as a data structure (e.g. <code>(print &quot;hello&quot; (* (+ 1 2) (- 3 4)))</code> instead of <code>print(&quot;hello&quot;, (1 + 2) * (3 - 4))</code>).
+This syntactic simplicity can make code in Clojure and other Lisps feel unfamiliar, but it also enables a level of extensibility not found in other languages (because Lisp code is data and can be manipulated by the language itself — see <a href="https://en.wikipedia.org/wiki/Homoiconicity">homoiconicity</a>).</p>
+<p>We use Clojure because it makes it easy to write robust code quickly.
+It also allows us to write the backend and frontend in the same language: we use regular Clojure running on the <a href="https://en.wikipedia.org/wiki/Java_virtual_machine">Java Virtual Machine (JVM)</a> (Java&rsquo;s interpreter) on the backend, and <a href="https://clojurescript.org/">ClojureScript</a> (a Clojure compiler that targets JavaScript) on the frontend.</p>
+<p>The best way to learn Clojure is to work with it interactively using a <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a> – you should always use one when learning the language or writing code (see &lsquo;REPLs&rsquo; below for information on how).
+When first getting into the language, you can ignore more advanced topics (like macros, transducers, protocols/records/types, multimethods, and clojure.spec).</p>
+<p>Language resources:</p>
+<ul>
+<li><a href="https://www.braveclojure.com/clojure-for-the-brave-and-true/">Clojure for the Brave and True</a> – book that covers the language in depth.</li>
+<li><a href="https://learnxinyminutes.com/docs/clojure/">Learn X in Y minutes: Clojure</a> – no-nonsense walkthrough of the syntax and core language features.</li>
+<li><a href="https://clojure.org/api/cheatsheet">Clojure Cheat Sheet</a> – cheat sheet for the language and standard library.</li>
+<li><a href="https://github.com/bbatsov/clojure-style-guide">The Clojure Style Guide</a> - the style guide we adhere to.</li>
+<li><a href="http://www.4clojure.com/">4clojure</a> – interactive exercises.</li>
+</ul>
+<p>We use the following libraries:</p>
+<ul>
+<li><a href="https://github.com/plumatic/schema">Schema</a> – a run-time type system.</li>
+<li><a href="https://reagent-project.github.io/">Reagent</a> – a wrapper for React.js (see the Frontend section).</li>
+</ul>
+<p>REPLs:</p>
+<ul>
+<li><a href="https://clojurescript.io/">ClojureScript.io</a> – online Clojure REPL (use this to get started quickly).</li>
+<li><a href="https://clojure.org/guides/repl/introduction">Programming at the REPL: Introduction</a> – guide for how to run a local REPL (use this when developing).</li>
+</ul>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>
