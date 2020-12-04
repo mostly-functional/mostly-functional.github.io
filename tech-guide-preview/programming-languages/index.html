@@ -40,7 +40,11 @@
     </li>
     
     <li class="">
-      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operating-systems/">Operating Systems</a>
     </li>
     
     <li class="">
@@ -93,7 +97,7 @@
 <h1 class="title">Programming Languages</h1>
 <div class="content ">
   <p><a href="https://en.wikipedia.org/wiki/Programming_language">Programming languages</a> are <a href="https://en.wikipedia.org/wiki/Formal_language">formal languages</a> used to write programs.</p>
-<!-- raw HTML omitted -->
+<p>TODO: more words</p>
 <p>The concepts presented in this section can be useful for everyone, but knowing the details is essential mostly to people in engineering roles.</p>
 <p>This section consists of two parts.
 In the first part, we discuss various programming language concepts.
@@ -175,7 +179,7 @@ Race conditions are traditionally avoided by means of synchronization mechanism 
 <p>As CPU frequencies have stagnated in recent years (and as the number of cores in a typical CPU have increased), concurrency support has become an increasingly important aspect of programming languages.
 As a result, modern languages tend to have a strong focus on concurrency.</p>
 <p>It should be noted that functional languages generally have a strong edge when it comes to concurrency (compared to imperative languages), because their focus on immutable data means that there&rsquo;s less potentially shared mutable state to worry about.</p>
-<!-- raw HTML omitted -->
+<p>TODO: mention thread-safety, how functional languages are automatically thread-safe</p>
 <h3 id="ffi-and-scripting-languages">FFI and Scripting Languages</h3>
 <p>It&rsquo;s fairly common occurrence for code written in one language to call code written in another, and most languages have one or more <a href="https://en.wikipedia.org/wiki/Foreign_function_interface">foreign function interfaces (FFIs)</a>, that facilitate this.
 Since OS and system APIs are typically written in <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a>, FFIs targeting C are by far the most common (most languages have them).
@@ -188,10 +192,10 @@ These languages, when embedded in and used to control an application or other sy
 Manually downloading and including libraries in projects is a major pain — especially when said libraries need to be kept up to date, and have dependencies of their own — which is why all modern languages have a <a href="https://en.wikipedia.org/wiki/Package_manager#Application-level_package_managers"><em>package manager</em></a>.</p>
 <p>Package managers typically handle downloading and caching of dependencies, conflict resolution, building and publishing libraries, etc.
 Some languages have more mature tooling for packages than others, but regardless, it&rsquo;s important that you familiarize yourself with the package managers for the languages you develop in.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<h3 id="glossary-of-programming-terms-and-concepts">Glossary of Programming Terms and Concepts</h3>
+<p>TODO: stuff like constants, functions, modules, generics, polymorphism, casting, macros, scope, keywords, iteration</p>
 <h2 id="noteworthy-programming-languages">Noteworthy Programming Languages</h2>
-<p>The following languages are in common use (or otherwise noteworthy):</p>
+<p>Here are some languages in that are in common use or that we think are otherwise especially noteworthy:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Assembly_language">Assembly Languages</a>: Family of languages — essentially machine code in text format. Sometimes embedded in other low-level languages for performance reasons.</li>
 <li><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>: The most common Unix shell and scripting language. Not well-suited for programming, but a necessary evil when working on the command line.</li>
@@ -253,8 +257,7 @@ We recommend that the reader select and work through an introductory text or cou
 It is both a <a href="https://en.wikipedia.org/wiki/Unix_shell">shell</a> (the standard shell in most Unix distributions) and a programming language.</p>
 <blockquote>
 <p>Although most users think of the shell as an interactive command interpreter, it is really a programming language in which each statement runs a command. Because it must satisfy both the interactive and programming aspects of command execution, it is a strange language, shaped as much by history as by design.
-— Brian W. Kernighan &amp; Rob Pike
-TODO: ^</p>
+— Brian W. Kernighan &amp; Rob Pike</p>
 </blockquote>
 <p>While Bash isn&rsquo;t great as a programming language, it&rsquo;s still important to know it well because:</p>
 <ol>
@@ -269,6 +272,8 @@ TODO: ^</p>
 <li><a href="https://www.learnshell.org/">learnshell.org</a> – interactive Bash tutorial.</li>
 <li><a href="https://www.learnshell.org/">Bash Academy</a> – in-depth Bash tutorials (currently a work in progress).</li>
 </ul>
+<h3 id="java">Java</h3>
+<p>TODO</p>
 <h3 id="clojure">Clojure</h3>
 <p><a href="https://en.wikipedia.org/wiki/Clojure">Clojure</a> is a dynamically typed functional language, belonging to the <a href="https://en.wikipedia.org/wiki/Lisp">Lisp</a> family of languages.</p>
 <p>Like all Lisps, its syntax is rather distinct, because it uses <a href="https://en.wikipedia.org/wiki/Polish_notation">prefix notation</a> rather than infix notation (e.g. <code>(+ 1 2 3)</code> instead of <code>1 + 2 + 3</code>), and the code is written directly as a data structure (e.g. <code>(print &quot;hello&quot; (* (+ 1 2) (- 3 4)))</code> instead of <code>print(&quot;hello&quot;, (1 + 2) * (3 - 4))</code>).

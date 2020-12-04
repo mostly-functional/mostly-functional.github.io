@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Operating Systems - Tech From the Ground Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="http://mostlyfunction.al/tech-guide-preview/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/tech-guide-preview/css/style.min.ebe594cc24c20c8433297b7aefd88b6e7fb3616e586ec67640c5e7b276c97caf.css">
+  
+
+  
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+  </ul>
+</div>
+
+  <div class="wrapper">
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Tech From the Ground Up</h4>
+  <ul>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/introduction/">Introduction</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture</a>
+    </li>
+    
+    <li class="active ">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operating-systems/">Operating Systems</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/networking/">Networking</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/databases/">Databases</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/unix/">Unix</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/algorithms-and-data-structures/">Algorithms and Data Structures</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/programming-languages/">Programming Languages</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/software-engineering/">Software Engineering</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operations/">Operations</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/security/">Security</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/web-app-development/">Web App Development</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/misc/">Misc</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Operating Systems</h1>
+<div class="content ">
+  <p>The software that handles communication with and management of a computer&rsquo;s hardware is called a <a href="(https://en.wikipedia.org/wiki/Kernel_(operating_system))"><em>kernel</em></a>.
+Kernel are bundled with various utilities, graphical interfaces, etc. as <a href="https://en.wikipedia.org/wiki/Operating_system"><em>Operating Systems (OSs)</em></a>.</p>
+<p>The dominant OSs are <a href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a>, <a href="https://en.wikipedia.org/wiki/MacOS">macOS</a> (formerly OS X), and <a href="https://en.wikipedia.org/wiki/Linux">Linux</a>.
+Linux isn&rsquo;t really a single OS, but rather a family of OSs that all use the <a href="https://en.wikipedia.org/wiki/Linux_kernel">Linux kernel</a>.</p>
+<p>Linux and macOS both belong to the <a href="https://en.wikipedia.org/wiki/Unix">Unix</a> family of OSs.
+This means that they&rsquo;re very similar from a usage and application development perspective, and any given piece of software is typically available for both.</p>
+<p>Kernels provide <a href="https://en.wikipedia.org/wiki/Application_programming_interface#Operating_systems">application programming interfaces (APIs)</a> for programmers/programs to interact with.
+Calls made to these APIs are called <a href="https://en.wikipedia.org/wiki/System_call"><em>system calls</em></a> (or <em>syscalls</em>).</p>
+<p>Kernel APIs are built around a set of abstractions, which help provide a more convenient interface than dealing directly with the underlying hardware.
+The following abstractions are especially important:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Process_(computing)"><em>Processes</em></a>: A process is an instance of a running program. Processes can make syscalls to launch (or <em>spawn</em>) other processes — these are called <a href="https://en.wikipedia.org/wiki/Child_process"><em>child processes</em></a> of the original process. Each process has a unique <a href="https://en.wikipedia.org/wiki/Process_identifier"><em>Process ID</em> (PID)</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Thread_(computing)"><em>Threads</em></a>: A thread is a sequence of instructions running independently as part of a program. Processes start with one thread, and can spawn more threads via syscalls. Used to make programs to multiple things at the same time.</li>
+<li><a href="https://en.wikipedia.org/wiki/Computer_file"><em>Files</em></a>: A file is a chunk of data, given a <a href="https://en.wikipedia.org/wiki/Filename">filename</a> (sometimes containing a <a href="https://en.wikipedia.org/wiki/Filename_extension"><em>filename extension</em></a> like <code>.html</code>) and stored on disk. Files can be created, moved, deleted, and <em>opened</em> (for reading and/or writing) through syscalls.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Unix_filesystem"><em>file system</em></a>: a big data structure into which all files on a computer are organized. In Unix, the file system is organized as a single <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)#Rooted_tree">rooted tree</a> of <a href="https://en.wikipedia.org/wiki/Directory_(computing)"><em>directories</em></a> (or <em>folders</em>); the top-level directory of which is called the <em>root</em> directory and denoted <code>/</code>. In Windows, the file system consists of multiple rooted trees (with root directories <code>C:</code>, <code>D:</code>, etc.). Note: Confusingly, the word &lsquo;file system&rsquo; is also used to refer to the <a href="https://en.wikipedia.org/wiki/File_system">format used to serialize files on disk</a>.</li>
+<li><em>Sockets</em>: Sockets are channels that can be opened either between processes running on the same machine (e.g. <a href="https://en.wikipedia.org/wiki/Unix_domain_socket">Unix sockets</a>) or between hosts on different machines (<a href="https://en.wikipedia.org/wiki/Network_socket"><em>network sockets</em></a>) for the purpose of sending data back and forth.</li>
+<li><em>Network interfaces</em>: TODO</li>
+</ul>
+<p>The following abstractions are also good to be aware of:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Virtual_memory"><em>Virtual memory</em></a>: A chunk of memory allotted to a process to store data in. If all available memory is exhausted, the OS sometimes transparently relocates parts of the virtual memory to disk (this is called <a href="https://en.wikipedia.org/wiki/Paging"><em>paging</em></a>, and the place where the data is stored is called a <em>swap file</em> or <em>swap partition</em>).</li>
+<li><a href="https://en.wikipedia.org/wiki/Environment_variable"><em>Environment variables</em></a>: A set of values, addressed by keys, used to pass configuration information to processes. Each process has an associated set of environment variables, which are usually &lsquo;passed down&rsquo; to its child processes.</li>
+<li><a href="https://en.wikipedia.org/wiki/Signal_(IPC)"><em>Signals</em></a>: notifications sent from the OS to a process, typically to tell it to stop running.</li>
+</ul>
+<p>In order to be executed by the OS, a program must first be <a href="https://en.wikipedia.org/wiki/Compiler">compiled</a> (translated to machine code using the appropriate instruction set) and stored as an <a href="https://en.wikipedia.org/wiki/Executable">executable</a> binary file (in a <a href="https://en.wikipedia.org/wiki/Application_binary_interface">format understood by the OS</a>).
+Programs can delegate some work to <a href="https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries"><em>shared libraries</em></a>, which are chunks of code written by somebody else, that have been compiled and are stored somewhere on the file system.</p>
+<p>Modern OSs are <em>multi-user</em>; they have multiple <a href="https://en.wikipedia.org/wiki/User_(computing)">user accounts</a>, often but not always associated with specific <a href="https://en.wikipedia.org/wiki/End_user"><em>end users</em></a> (humans).
+Each file, directory and process is <em>owned</em> by some user account (typically the account that created it), and users can not access files or directories owned by other users unless they have been granted <a href="https://en.wikipedia.org/wiki/File_system_permissions"><em>permission</em></a> to do so.
+There&rsquo;s also a special user called the <a href="https://en.wikipedia.org/wiki/Superuser"><em>superuser</em></a> (also called <em>root user</em> or <em>administrator</em>), which always has permission to do whatever it wants.
+OSs typically have mechanism that allow end users to execute specific commands as the superuser.</p>
+<p>OSs usually ship with both a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">graphical user interface (GUI)</a> and a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command-line interface (CLI)</a> called a [shell](<a href="https://en.wikipedia.org/wiki/Shell_(computing)">https://en.wikipedia.org/wiki/Shell_(computing)</a>.
+Most people who use computers never interact with a shell, but knowing how to use a shell well is an essential skill for power users.</p>
+<h2 id="virtualization">Virtualization</h2>
+<p>TODO: VMs and containers</p>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+  <script type="text/javascript" src="/tech-guide-preview/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+</body>
+</html>

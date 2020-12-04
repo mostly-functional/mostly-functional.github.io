@@ -40,7 +40,11 @@
     </li>
     
     <li class="">
-      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture and Operating Systems</a>
+      <a href="http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/">Computer Architecture</a>
+    </li>
+    
+    <li class="">
+      <a href="http://mostlyfunction.al/tech-guide-preview/operating-systems/">Operating Systems</a>
     </li>
     
     <li class="">
@@ -99,7 +103,7 @@ Most products use Relational/SQL databases (described below), so a basic underst
 <h2 id="concepts">Concepts</h2>
 <p>Databases are usually managed by an application called a <a href="https://en.wikipedia.org/wiki/Database#Database_management_system">database management system (DBMS)</a>.
 DBMSs are typically run on dedicated hosts (or clusters of hosts) on the same network as the apps that use them (and the same DBMS instance/cluster is sometimes shared between multiple applications).</p>
-<!-- raw HTML omitted -->
+<p>TODO: this is really mostly true for SQL databases — probably better to explain bottom-up</p>
 <p>Databases usually store data in <a href="https://en.wikipedia.org/wiki/Row_(database)"><em>rows</em></a> (or <em>records</em>).
 A collection of similar rows is usually called a <a href="https://en.wikipedia.org/wiki/Table_(database)"><em>table</em></a>.
 Typically, each row in a table consists of a set of values for a list of <a href="https://en.wikipedia.org/wiki/Column_(database)"><em>columns</em></a>.</p>
@@ -109,7 +113,7 @@ Querying, in particular, is usually done via a <a href="https://en.wikipedia.org
 Apart from requesting records, query languages often permit more complicated operations like computing statistics or joining data from multiple tables.</p>
 <p>Most DBMSs also allow/require the user to define the structure of the data stored in each table.
 The language used to produce these definitions is called a <a href="https://en.wikipedia.org/wiki/Data_definition_language"><em>data definition language</em></a>.</p>
-<!-- raw HTML omitted -->
+<p>TODO: transactions, users, indexes</p>
 <h2 id="relationalsql-databases">Relational/SQL Databases</h2>
 <p><a href="https://en.wikipedia.org/wiki/Relational_database">Relational databases</a> are the most commonly used types of databases.</p>
 <p>These are built around the <a href="https://en.wikipedia.org/wiki/Relational_model"><em>relational model</em></a>, which uses tables (or <em>relations</em>) with columns and rows.

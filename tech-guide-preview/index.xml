@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tech From the Ground Up</title>
+    <title>Software Development: the Cheat Sheet on Tech From the Ground Up</title>
     <link>http://mostlyfunction.al/tech-guide-preview/</link>
-    <description>Recent content on Tech From the Ground Up</description>
+    <description>Recent content in Software Development: the Cheat Sheet on Tech From the Ground Up</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="http://mostlyfunction.al/tech-guide-preview/index.xml" rel="self" type="application/rss+xml" />
@@ -13,16 +13,25 @@
       <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
       
       <guid>http://mostlyfunction.al/tech-guide-preview/introduction/</guid>
-      <description>What is this document and what is it good for?</description>
+      <description>What is this guide and what is it good for?</description>
     </item>
     
     <item>
-      <title>Computer Architecture and Operating Systems</title>
+      <title>Computer Architecture</title>
       <link>http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/</link>
       <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
       
       <guid>http://mostlyfunction.al/tech-guide-preview/computer-architecture-and-operating-systems/</guid>
-      <description>A whirlwind tour of how your computer is put together.</description>
+      <description>How computers work.</description>
+    </item>
+    
+    <item>
+      <title>Operating Systems</title>
+      <link>http://mostlyfunction.al/tech-guide-preview/operating-systems/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>http://mostlyfunction.al/tech-guide-preview/operating-systems/</guid>
+      <description>The software that runs your software.</description>
     </item>
     
     <item>
